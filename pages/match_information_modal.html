@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes completos da partida - Calendário Futebol Brasileiro 2026">
+    <title>Informações da Partida - Calendário Futebol 2026</title>
+    <link rel="stylesheet" href="../css/main.css">
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fcalendario8024back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.13"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface border-b border-border sticky top-0 z-nav shadow-sm">
+        <div class="max-w-7xl mx-auto px-sm md:px-lg py-sm">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" fill="#1B4B8C"/>
+                        <path d="M20 8C13.373 8 8 13.373 8 20C8 26.627 13.373 32 20 32C26.627 32 32 26.627 32 20C32 13.373 26.627 8 20 8ZM20 10C25.514 10 30 14.486 30 20C30 25.514 25.514 30 20 30C14.486 30 10 25.514 10 20C10 14.486 14.486 10 20 10Z" fill="white"/>
+                        <path d="M20 12L22 18H28L23 22L25 28L20 24L15 28L17 22L12 18H18L20 12Z" fill="#00A859"/>
+                    </svg>
+                    <div>
+                        <h1 class="text-xl font-heading font-bold text-primary">Calendário Futebol</h1>
+                        <p class="text-xs text-text-secondary font-caption">Temporada 2026</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="month_selection_grid.html" class="btn-secondary text-sm px-md h-10 flex items-center gap-2" aria-label="Voltar ao calendário">
+                        <img src="https://api.iconify.design/mdi:calendar-month.svg?color=%231B4B8C" alt="Ícone de calendário" class="w-5 h-5">
+                        <span class="hidden md:inline">Calendário</span>
+                    </a>
+                    <button class="btn-primary text-sm px-md h-10 flex items-center gap-2" aria-label="Meus jogos favoritos">
+                        <img src="https://api.iconify.design/mdi:star-outline.svg?color=%23FFFFFF" alt="Ícone de favoritos" class="w-5 h-5">
+                        <span class="hidden md:inline">Favoritos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-sm md:px-lg py-lg">
+        <!-- Breadcrumb Navigation -->
+        <nav class="mb-lg" aria-label="Navegação estrutural">
+            <ol class="flex items-center gap-2 text-sm">
+                <li>
+                    <a href="month_selection_grid.html" class="text-text-secondary hover:text-primary transition-colors">
+                        Calendário
+                    </a>
+                </li>
+                <li class="text-text-secondary">
+                    <img src="https://api.iconify.design/mdi:chevron-right.svg?color=%2364748B" alt="Separador" class="w-4 h-4">
+                </li>
+                <li>
+                    <a href="monthly_calendar_view.html" class="text-text-secondary hover:text-primary transition-colors">
+                        Janeiro 2026
+                    </a>
+                </li>
+                <li class="text-text-secondary">
+                    <img src="https://api.iconify.design/mdi:chevron-right.svg?color=%2364748B" alt="Separador" class="w-4 h-4">
+                </li>
+                <li>
+                    <a href="daily_match_details.html" class="text-text-secondary hover:text-primary transition-colors">
+                        15/01/2026
+                    </a>
+                </li>
+                <li class="text-text-secondary">
+                    <img src="https://api.iconify.design/mdi:chevron-right.svg?color=%2364748B" alt="Separador" class="w-4 h-4">
+                </li>
+                <li class="text-primary font-semibold">Detalhes da Partida</li>
+            </ol>
+        </nav>
+
+        <!-- Modal Content Container -->
+        <div class="max-w-4xl mx-auto">
+            <!-- Match Information Card -->
+            <article class="card" id="matchModal">
+                <!-- Competition Header -->
+                <div class="flex items-center justify-between mb-lg pb-md border-b border-border">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-accent-50 rounded-lg flex items-center justify-center">
+                            <img src="https://api.iconify.design/mdi:trophy.svg?color=%2300A859" alt="Logo do Campeonato Brasileiro" class="w-8 h-8">
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-heading font-bold text-primary">Campeonato Brasileiro Série A</h2>
+                            <p class="text-sm text-text-secondary font-caption">1ª Rodada - Fase de Grupos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-warning-50 text-warning text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1">
+                            <img src="https://api.iconify.design/mdi:fire.svg?color=%23D97706" alt="Clássico" class="w-3 h-3">
+                            Clássico
+                        </span>
+                        <button class="btn-secondary text-sm px-md h-10" onclick="window.history.back()" aria-label="Fechar detalhes">
+                            <img src="https://api.iconify.design/mdi:close.svg?color=%231B4B8C" alt="Ícone de fechar" class="w-5 h-5">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Teams Section -->
+                <div class="mb-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                        <!-- Home Team -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 mb-4 bg-surface rounded-lg border-2 border-border p-4 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=400&auto=format&fit=crop" 
+                                    alt="Escudo do Flamengo" 
+                                    class="w-full h-full object-contain"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-primary mb-2">Flamengo</h3>
+                            <p class="text-sm text-text-secondary font-caption mb-3">Mandante</p>
+                            <button class="btn-secondary text-sm px-md h-10 flex items-center gap-2" aria-label="Filtrar jogos do Flamengo">
+                                <img src="https://api.iconify.design/mdi:filter-outline.svg?color=%231B4B8C" alt="Ícone de filtro" class="w-4 h-4">
+                                Ver todos os jogos
+                            </button>
+                        </div>
+
+                        <!-- VS Separator -->
+                        <div class="flex flex-col items-center justify-center">
+                            <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mb-3">
+                                <span class="text-2xl font-heading font-bold text-primary">VS</span>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-lg font-heading font-bold text-primary mb-1">15/01/2026</p>
+                                <p class="text-sm text-text-secondary font-caption">Quarta-feira</p>
+                                <p class="text-xl font-heading font-bold text-accent mt-2">20:00</p>
+                            </div>
+                        </div>
+
+                        <!-- Away Team -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-32 h-32 mb-4 bg-surface rounded-lg border-2 border-border p-4 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=400&auto=format&fit=crop" 
+                                    alt="Escudo do Palmeiras" 
+                                    class="w-full h-full object-contain"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            </div>
+                            <h3 class="text-2xl font-heading font-bold text-primary mb-2">Palmeiras</h3>
+                            <p class="text-sm text-text-secondary font-caption mb-3">Visitante</p>
+                            <button class="btn-secondary text-sm px-md h-10 flex items-center gap-2" aria-label="Filtrar jogos do Palmeiras">
+                                <img src="https://api.iconify.design/mdi:filter-outline.svg?color=%231B4B8C" alt="Ícone de filtro" class="w-4 h-4">
+                                Ver todos os jogos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue Information -->
+                <div class="bg-background rounded-md p-lg mb-lg">
+                    <h4 class="text-lg font-heading font-bold text-primary mb-4 flex items-center gap-2">
+                        <img src="https://api.iconify.design/mdi:stadium.svg?color=%231B4B8C" alt="Ícone de estádio" class="w-6 h-6">
+                        Informações do Local
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <img src="https://api.iconify.design/mdi:map-marker.svg?color=%231B4B8C" alt="Ícone de localização" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-secondary font-caption mb-1">Estádio</p>
+                                <p class="text-base font-body font-semibold text-primary">Maracanã</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <img src="https://api.iconify.design/mdi:city.svg?color=%231B4B8C" alt="Ícone de cidade" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-secondary font-caption mb-1">Cidade</p>
+                                <p class="text-base font-body font-semibold text-primary">Rio de Janeiro - RJ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <img src="https://api.iconify.design/mdi:account-group.svg?color=%231B4B8C" alt="Ícone de capacidade" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-secondary font-caption mb-1">Capacidade</p>
+                                <p class="text-base font-body font-semibold text-primary">78.838 pessoas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <img src="https://api.iconify.design/mdi:weather-partly-cloudy.svg?color=%231B4B8C" alt="Ícone de clima" class="w-5 h-5">
+                            </div>
+                            <div>
+                                <p class="text-sm text-text-secondary font-caption mb-1">Previsão</p>
+                                <p class="text-base font-body font-semibold text-primary">28°C - Parcialmente nublado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Match Statistics Preview -->
+                <div class="bg-background rounded-md p-lg mb-lg">
+                    <h4 class="text-lg font-heading font-bold text-primary mb-4 flex items-center gap-2">
+                        <img src="https://api.iconify.design/mdi:chart-bar.svg?color=%231B4B8C" alt="Ícone de estatísticas" class="w-6 h-6">
+                        Histórico de Confrontos
+                    </h4>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <p class="text-3xl font-heading font-bold text-accent mb-2">42</p>
+                            <p class="text-sm text-text-secondary font-caption">Vitórias Flamengo</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-heading font-bold text-text-secondary mb-2">28</p>
+                            <p class="text-sm text-text-secondary font-caption">Empates</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-heading font-bold text-accent mb-2">38</p>
+                            <p class="text-sm text-text-secondary font-caption">Vitórias Palmeiras</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-border">
+                        <p class="text-sm text-text-secondary text-center">
+                            Total de confrontos: <span class="font-semibold text-primary">108 jogos</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Follow Match -->
+                    <button 
+                        id="followMatchBtn" 
+                        class="btn-accent h-12 flex items-center justify-center gap-2 transition-all"
+                        aria-label="Seguir esta partida"
+                        onclick="toggleFollowMatch()">
+                        <img id="followIcon" src="https://api.iconify.design/mdi:star-outline.svg?color=%23FFFFFF" alt="Ícone de seguir" class="w-5 h-5">
+                        <span id="followText">Seguir Partida</span>
+                    </button>
+
+                    <!-- External Coverage -->
+                    <a 
+                        href="https://ge.globo.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="btn-primary h-12 flex items-center justify-center gap-2"
+                        aria-label="Ver cobertura completa no GE">
+                        <img src="https://api.iconify.design/mdi:open-in-new.svg?color=%23FFFFFF" alt="Ícone de link externo" class="w-5 h-5">
+                        <span>Cobertura Completa</span>
+                    </a>
+
+                    <!-- Share Match -->
+                    <button 
+                        class="btn-secondary h-12 flex items-center justify-center gap-2"
+                        aria-label="Compartilhar partida"
+                        onclick="shareMatch()">
+                        <img src="https://api.iconify.design/mdi:share-variant.svg?color=%231B4B8C" alt="Ícone de compartilhar" class="w-5 h-5">
+                        <span>Compartilhar</span>
+                    </button>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="mt-lg pt-lg border-t border-border">
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <a href="monthly_calendar_view.html" class="text-sm text-text-secondary hover:text-primary transition-colors flex items-center gap-2">
+                            <img src="https://api.iconify.design/mdi:calendar-month.svg?color=%2364748B" alt="Ícone de calendário" class="w-4 h-4">
+                            Ver calendário mensal
+                        </a>
+                        <a href="daily_match_details.html" class="text-sm text-text-secondary hover:text-primary transition-colors flex items-center gap-2">
+                            <img src="https://api.iconify.design/mdi:calendar-today.svg?color=%2364748B" alt="Ícone de dia" class="w-4 h-4">
+                            Ver todos os jogos do dia
+                        </a>
+                        <button onclick="applyTeamFilter('flamengo')" class="text-sm text-text-secondary hover:text-primary transition-colors flex items-center gap-2">
+                            <img src="https://api.iconify.design/mdi:filter.svg?color=%2364748B" alt="Ícone de filtro" class="w-4 h-4">
+                            Filtrar por Flamengo
+                        </button>
+                        <button onclick="applyTeamFilter('palmeiras')" class="text-sm text-text-secondary hover:text-primary transition-colors flex items-center gap-2">
+                            <img src="https://api.iconify.design/mdi:filter.svg?color=%2364748B" alt="Ícone de filtro" class="w-4 h-4">
+                            Filtrar por Palmeiras
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Related Matches Section -->
+            <section class="mt-lg">
+                <h3 class="text-2xl font-heading font-bold text-primary mb-lg">Próximos Jogos dos Times</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Flamengo Next Match -->
+                    <div class="card">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-surface rounded-lg border border-border p-2 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=400&auto=format&fit=crop" 
+                                    alt="Escudo do Flamengo" 
+                                    class="w-full h-full object-contain"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-heading font-bold text-primary">Próximo jogo do Flamengo</h4>
+                                <p class="text-sm text-text-secondary font-caption">22/01/2026 - 19:00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base font-body font-semibold text-primary">Flamengo</span>
+                                <span class="text-text-secondary">vs</span>
+                                <span class="text-base font-body font-semibold text-primary">Corinthians</span>
+                            </div>
+                            <a href="match_information_modal.html" class="text-sm text-accent hover:text-accent-700 font-semibold">
+                                Ver detalhes →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Palmeiras Next Match -->
+                    <div class="card">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-surface rounded-lg border border-border p-2 flex items-center justify-center overflow-hidden">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=400&auto=format&fit=crop" 
+                                    alt="Escudo do Palmeiras" 
+                                    class="w-full h-full object-contain"
+                                    onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-heading font-bold text-primary">Próximo jogo do Palmeiras</h4>
+                                <p class="text-sm text-text-secondary font-caption">23/01/2026 - 21:00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base font-body font-semibold text-primary">São Paulo</span>
+                                <span class="text-text-secondary">vs</span>
+                                <span class="text-base font-body font-semibold text-primary">Palmeiras</span>
+                            </div>
+                            <a href="match_information_modal.html" class="text-sm text-accent hover:text-accent-700 font-semibold">
+                                Ver detalhes →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-toast hidden">
+        <div class="bg-surface border border-border rounded-md shadow-xl p-md flex items-center gap-3 min-w-[300px]">
+            <div id="toastIcon" class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"></div>
+            <div class="flex-1">
+                <p id="toastMessage" class="text-sm font-body font-semibold text-primary"></p>
+            </div>
+            <button onclick="hideToast()" class="text-text-secondary hover:text-primary transition-colors" aria-label="Fechar notificação">
+                <img src="https://api.iconify.design/mdi:close.svg?color=%2364748B" alt="Fechar" class="w-5 h-5">
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Follow Match Toggle
+        let isFollowing = false;
+
+        function toggleFollowMatch() {
+            const btn = document.getElementById('followMatchBtn');
+            const icon = document.getElementById('followIcon');
+            const text = document.getElementById('followText');
+            
+            isFollowing = !isFollowing;
+            
+            if (isFollowing) {
+                btn.classList.remove('btn-accent');
+                btn.classList.add('btn-secondary');
+                icon.src = 'https://api.iconify.design/mdi:star.svg?color=%231B4B8C';
+                text.textContent = 'Seguindo';
+                showToast('Partida adicionada aos favoritos!', 'success');
+                
+                // Save to localStorage
+                const followedMatches = JSON.parse(localStorage.getItem('followedMatches') || '[]');
+                followedMatches.push({
+                    id: 'flamengo-palmeiras-20260115',
+                    homeTeam: 'Flamengo',
+                    awayTeam: 'Palmeiras',
+                    date: '15/01/2026',
+                    time: '20:00'
+                });
+                localStorage.setItem('followedMatches', JSON.stringify(followedMatches));
+            } else {
+                btn.classList.remove('btn-secondary');
+                btn.classList.add('btn-accent');
+                icon.src = 'https://api.iconify.design/mdi:star-outline.svg?color=%23FFFFFF';
+                text.textContent = 'Seguir Partida';
+                showToast('Partida removida dos favoritos', 'info');
+                
+                // Remove from localStorage
+                const followedMatches = JSON.parse(localStorage.getItem('followedMatches') || '[]');
+                const updatedMatches = followedMatches.filter(m => m.id !== 'flamengo-palmeiras-20260115');
+                localStorage.setItem('followedMatches', JSON.stringify(updatedMatches));
+            }
+        }
+
+        // Share Match
+        function shareMatch() {
+            const matchData = {
+                title: 'Flamengo vs Palmeiras',
+                text: 'Confira este clássico do futebol brasileiro! Flamengo vs Palmeiras - 15/01/2026 às 20:00 no Maracanã',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(matchData)
+                    .then(() => showToast('Partida compartilhada com sucesso!', 'success'))
+                    .catch(() => copyToClipboard(window.location.href));
+            } else {
+                copyToClipboard(window.location.href);
+            }
+        }
+
+        // Copy to Clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => showToast('Link copiado para a área de transferência!', 'success'))
+                .catch(() => showToast('Erro ao copiar link', 'error'));
+        }
+
+        // Apply Team Filter
+        function applyTeamFilter(team) {
+            localStorage.setItem('selectedTeamFilter', team);
+            showToast(`Filtro aplicado: ${team.charAt(0).toUpperCase() + team.slice(1)}`, 'success');
+            setTimeout(() => {
+                window.location.href = 'monthly_calendar_view.html';
+            }, 1000);
+        }
+
+        // Toast Notification System
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            const toastIcon = document.getElementById('toastIcon');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            // Set icon and color based on type
+            let iconSrc = '';
+            let bgColor = '';
+            
+            switch(type) {
+                case 'success':
+                    iconSrc = 'https://api.iconify.design/mdi:check-circle.svg?color=%2300A859';
+                    bgColor = 'bg-accent-50';
+                    break;
+                case 'error':
+                    iconSrc = 'https://api.iconify.design/mdi:alert-circle.svg?color=%23DC2626';
+                    bgColor = 'bg-error-50';
+                    break;
+                case 'info':
+                default:
+                    iconSrc = 'https://api.iconify.design/mdi:information.svg?color=%231B4B8C';
+                    bgColor = 'bg-primary-50';
+                    break;
+            }
+            
+            toastIcon.className = `w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${bgColor}`;
+            toastIcon.innerHTML = `<img src="${iconSrc}" alt="Ícone de notificação" class="w-6 h-6">`;
+            toastMessage.textContent = message;
+            
+            toast.classList.remove('hidden');
+            toast.style.animation = 'slideInRight 300ms ease-out';
+            
+            setTimeout(() => {
+                hideToast();
+            }, 4000);
+        }
+
+        function hideToast() {
+            const toast = document.getElementById('toast');
+            toast.style.animation = 'slideOutRight 300ms ease-in';
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 300);
+        }
+
+        // Check if match is already followed on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const followedMatches = JSON.parse(localStorage.getItem('followedMatches') || '[]');
+            const currentMatch = followedMatches.find(m => m.id === 'flamengo-palmeiras-20260115');
+            
+            if (currentMatch) {
+                isFollowing = true;
+                const btn = document.getElementById('followMatchBtn');
+                const icon = document.getElementById('followIcon');
+                const text = document.getElementById('followText');
+                
+                btn.classList.remove('btn-accent');
+                btn.classList.add('btn-secondary');
+                icon.src = 'https://api.iconify.design/mdi:star.svg?color=%231B4B8C';
+                text.textContent = 'Seguindo';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calendário Mensal de Futebol Brasileiro 2026 - Visualize todos os jogos do mês">
+    <title>Calendário Mensal - Futebol 2026</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+  
+  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fcalendario8024back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.13"></script>
+  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Header Navigation -->
+    <header class="bg-surface border-b border-border sticky top-0 z-nav shadow-sm">
+        <div class="max-w-7xl mx-auto px-sm md:px-lg py-sm">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+           
+                    <div>
+                        <h1 class="text-xl font-heading font-bold text-primary">Calendário Futebol</h1>
+                        <p class="text-xs text-text-secondary font-caption">Temporada 2026</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="month_selection_grid.html" class="btn-secondary text-sm px-md h-10 flex items-center gap-2" aria-label="Voltar para seleção de meses">
+                        <img src="https://api.iconify.design/mdi:arrow-left.svg?color=%231B4B8C" alt="Ícone de voltar" class="w-5 h-5">
+                        <span class="hidden md:inline">Voltar</span>
+                    </a>
+                    <button class="btn-primary text-sm px-md h-10 flex items-center gap-2" aria-label="Meus jogos favoritos">
+                        <img src="https://api.iconify.design/mdi:star-outline.svg?color=%23FFFFFF" alt="Ícone de favoritos" class="w-5 h-5">
+                        <span class="hidden md:inline">Favoritos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-sm md:px-lg py-lg">
+        <!-- Page Title & Month Navigation -->
+        <section class="mb-lg">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-lg">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-primary mb-2" id="currentMonthTitle">
+                        Janeiro 2026
+                    </h2>
+                    <p class="text-lg text-text-secondary font-body">
+                        Navegue pelos jogos do mês
+                    </p>
+                </div>
+                
+                <!-- Month Navigation Controls -->
+                <div class="flex items-center gap-3">
+                    <button id="prevMonth" class="btn-secondary px-md h-10 flex items-center gap-2" aria-label="Mês anterior">
+                        <img src="https://api.iconify.design/mdi:chevron-left.svg?color=%231B4B8C" alt="Anterior" class="w-5 h-5">
+                        <span class="hidden md:inline">Anterior</span>
+                    </button>
+                    <button id="todayBtn" class="btn-accent px-md h-10 text-sm" aria-label="Ir para hoje">
+                        Hoje
+                    </button>
+                    <button id="nextMonth" class="btn-secondary px-md h-10 flex items-center gap-2" aria-label="Próximo mês">
+                        <span class="hidden md:inline">Próximo</span>
+                        <img src="https://api.iconify.design/mdi:chevron-right.svg?color=%231B4B8C" alt="Próximo" class="w-5 h-5">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Toolbar -->
+            <div class="card mb-lg">
+                <div class="flex flex-col lg:flex-row gap-4">
+                    <!-- Search Input -->
+                    <div class="flex-1">
+                        <label for="searchInput" class="block text-sm font-semibold text-text-primary mb-2">
+                            Buscar Jogos
+                        </label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                class="input w-full pl-10" 
+                                placeholder="Buscar por time, estádio ou cidade..."
+                                aria-label="Campo de busca de jogos"
+                            >
+                            <img src="https://api.iconify.design/mdi:magnify.svg?color=%2364748B" alt="Ícone de busca" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5">
+                        </div>
+                    </div>
+
+                    <!-- Team Filter -->
+
+                    <!-- Competition Filter -->
+                    <div class="flex-1">
+                        <label for="competitionFilter" class="block text-sm font-semibold text-text-primary mb-2">
+                            Competição
+                        </label>
+                        <select id="competitionFilter" class="input w-full" aria-label="Filtrar por competição">
+                            <option value="">Todas as competições</option>
+                            <option value="brasileirao">Brasileirão Série A</option>
+                            <option value="copa-brasil">Copa do Brasil</option>
+                            <option value="libertadores">Libertadores</option>
+                            <option value="sul-americana">Sul-Americana</option>
+                            <option value="estadual">Campeonatos Estaduais</option>
+                        </select>
+                    </div>
+
+                    <!-- Filter Actions -->
+                    <div class="flex items-end gap-2">
+                        <button id="applyFilters" class="btn-primary px-md h-12 flex items-center gap-2" aria-label="Aplicar filtros">
+                            <img src="https://api.iconify.design/mdi:filter-check.svg?color=%23FFFFFF" alt="Aplicar filtros" class="w-5 h-5">
+                            <span>Aplicar</span>
+                        </button>
+                        <button id="resetFilters" class="btn-secondary px-md h-12" aria-label="Resetar filtros">
+                            <img src="https://api.iconify.design/mdi:filter-remove.svg?color=%231B4B8C" alt="Resetar filtros" class="w-5 h-5">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Filters Display -->
+                <div id="activeFilters" class="hidden mt-4 pt-4 border-t border-border">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="text-sm font-semibold text-text-primary">Filtros ativos:</span>
+                        <div id="filterTags" class="flex items-center gap-2 flex-wrap">
+                            <!-- Filter tags will be dynamically inserted -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="flex flex-wrap gap-4 mb-lg">
+                <div class="bg-surface rounded-md px-md py-sm border border-border shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <img src="https://api.iconify.design/mdi:calendar-check.svg?color=%231B4B8C" alt="Ícone de jogos" class="w-6 h-6">
+                        <div>
+                            <p class="text-xs text-text-secondary font-caption">Jogos no Mês</p>
+                            <p class="text-xl font-heading font-bold text-primary" id="monthGamesCount">98</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface rounded-md px-md py-sm border border-border shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <img src="https://api.iconify.design/mdi:fire.svg?color=%23D97706" alt="Ícone de clássicos" class="w-6 h-6">
+                        <div>
+                            <p class="text-xs text-text-secondary font-caption">Clássicos</p>
+                            <p class="text-xl font-heading font-bold text-warning" id="classicsCount">12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface rounded-md px-md py-sm border border-border shadow-sm">
+                    <div class="flex items-center gap-2">
+                        <img src="https://api.iconify.design/mdi:trophy.svg?color=%2300A859" alt="Ícone de competições" class="w-6 h-6">
+                        <div>
+                            <p class="text-xs text-text-secondary font-caption">Competições</p>
+                            <p class="text-xl font-heading font-bold text-accent" id="competitionsCount">5</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="card">
+            <div id="calendar" class="min-h-[600px]"></div>
+        </section>
+
+        <!-- Legend -->
+        <section class="mt-lg">
+            <div class="card">
+                <h3 class="text-lg font-heading font-bold text-primary mb-4">Legenda</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-accent"></div>
+                        <span class="text-sm text-text-secondary">Brasileirão</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-secondary"></div>
+                        <span class="text-sm text-text-secondary">Libertadores</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-warning"></div>
+                        <span class="text-sm text-text-secondary">Clássico</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-4 h-4 rounded-full bg-primary"></div>
+                        <span class="text-sm text-text-secondary">Copa do Brasil</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Match Information Modal -->
+    <div id="matchModal" class="hidden fixed inset-0 z-modal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="flex items-start justify-center min-h-screen p-4">
+            <div class="modal max-w-2xl w-full relative">
+                <!-- Close Button -->
+                <button id="closeModal" class="absolute top-4 right-4 text-text-secondary hover:text-primary transition-colors" aria-label="Fechar modal">
+                    <img src="https://api.iconify.design/mdi:close.svg?color=%2364748B" alt="Fechar" class="w-6 h-6">
+                </button>
+
+                <!-- Modal Content -->
+                <div id="modalContent">
+                    <!-- Content will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <script>
+        // Mock data for teams
+        const mockTeams = [
+            { id: 1, name: 'Flamengo', badge: 'https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=100&h=100&fit=crop' },
+            { id: 2, name: 'Palmeiras', badge: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=100&h=100&fit=crop' },
+            { id: 3, name: 'São Paulo', badge: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=100&h=100&fit=crop' },
+            { id: 4, name: 'Corinthians', badge: 'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=100&h=100&fit=crop' },
+            { id: 5, name: 'Santos', badge: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=100&h=100&fit=crop' },
+            { id: 6, name: 'Grêmio', badge: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100&h=100&fit=crop' },
+            { id: 7, name: 'Internacional', badge: 'https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=100&h=100&fit=crop' },
+            { id: 8, name: 'Atlético-MG', badge: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=100&h=100&fit=crop' }
+        ];
+
+        // Mock data for matches
+        const mockMatches = [
+            {
+                id: 1,
+                date: '2026-01-15',
+                time: '19:00',
+                homeTeam: 'Flamengo',
+                awayTeam: 'Palmeiras',
+                competition: 'Brasileirão Série A',
+                stadium: 'Maracanã',
+                city: 'Rio de Janeiro',
+                isClassic: true,
+                phase: 'Rodada 1'
+            },
+            {
+                id: 2,
+                date: '2026-01-18',
+                time: '16:00',
+                homeTeam: 'São Paulo',
+                awayTeam: 'Corinthians',
+                competition: 'Brasileirão Série A',
+                stadium: 'Morumbi',
+                city: 'São Paulo',
+                isClassic: true,
+                phase: 'Rodada 1'
+            },
+            {
+                id: 3,
+                date: '2026-01-22',
+                time: '21:00',
+                homeTeam: 'Grêmio',
+                awayTeam: 'Internacional',
+                competition: 'Copa do Brasil',
+                stadium: 'Arena do Grêmio',
+                city: 'Porto Alegre',
+                isClassic: true,
+                phase: 'Oitavas de Final'
+            },
+            {
+                id: 4,
+                date: '2026-01-25',
+                time: '18:30',
+                homeTeam: 'Santos',
+                awayTeam: 'Atlético-MG',
+                competition: 'Libertadores',
+                stadium: 'Vila Belmiro',
+                city: 'Santos',
+                isClassic: false,
+                phase: 'Fase de Grupos'
+            }
+        ];
+
+        // Initialize calendar
+        let calendar;
+        let selectedTeams = [];
+        let selectedCompetition = '';
+        let searchQuery = '';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCalendar();
+            initializeFilters();
+            loadFilterPreferences();
+            updateStats();
+        });
+
+        function initializeCalendar() {
+            const calendarEl = document.getElementById('calendar');
+            
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'pt-br',
+                headerToolbar: false,
+                height: 'auto',
+                events: getFilteredEvents(),
+                eventClick: function(info) {
+                    showMatchModal(info.event.extendedProps.matchData);
+                },
+                dateClick: function(info) {
+                    const matchesOnDate = mockMatches.filter(m => m.date === info.dateStr);
+                    if (matchesOnDate.length > 0) {
+                        window.location.href = `daily_match_details.html?date=${info.dateStr}`;
+                    }
+                },
+                eventContent: function(arg) {
+                    const match = arg.event.extendedProps.matchData;
+                    return {
+                        html: `
+                            <div class="p-2 text-xs cursor-pointer hover:opacity-80 transition-opacity">
+                                <div class="font-semibold truncate">${match.homeTeam} vs ${match.awayTeam}</div>
+                                <div class="text-xs opacity-75">${match.time}</div>
+                            </div>
+                        `
+                    };
+                },
+                eventClassNames: function(arg) {
+                    const match = arg.event.extendedProps.matchData;
+                    let classes = ['rounded-md', 'mb-1', 'border', 'border-border'];
+                    
+                    if (match.competition === 'Brasileirão Série A') {
+                        classes.push('bg-accent-50', 'text-accent-900');
+                    } else if (match.competition === 'Libertadores') {
+                        classes.push('bg-secondary-50', 'text-secondary-900');
+                    } else if (match.competition === 'Copa do Brasil') {
+                        classes.push('bg-primary-50', 'text-primary-900');
+                    }
+                    
+                    if (match.isClassic) {
+                        classes.push('ring-2', 'ring-warning');
+                    }
+                    
+                    return classes;
+                }
+            });
+
+            calendar.render();
+            updateMonthTitle();
+        }
+
+        function getFilteredEvents() {
+            let filtered = mockMatches;
+
+            // Apply team filter
+            if (selectedTeams.length > 0) {
+                filtered = filtered.filter(match => 
+                    selectedTeams.includes(match.homeTeam) || selectedTeams.includes(match.awayTeam)
+                );
+            }
+
+            // Apply competition filter
+            if (selectedCompetition) {
+                const competitionMap = {
+                    'brasileirao': 'Brasileirão Série A',
+                    'copa-brasil': 'Copa do Brasil',
+                    'libertadores': 'Libertadores',
+                    'sul-americana': 'Sul-Americana',
+                    'estadual': 'Campeonatos Estaduais'
+                };
+                filtered = filtered.filter(match => 
+                    match.competition === competitionMap[selectedCompetition]
+                );
+            }
+
+            // Apply search filter
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(match =>
+                    match.homeTeam.toLowerCase().includes(query) ||
+                    match.awayTeam.toLowerCase().includes(query) ||
+                    match.stadium.toLowerCase().includes(query) ||
+                    match.city.toLowerCase().includes(query)
+                );
+            }
+
+            return filtered.map(match => ({
+                title: `${match.homeTeam} vs ${match.awayTeam}`,
+                start: match.date,
+                extendedProps: {
+                    matchData: match
+                }
+            }));
+        }
+
+        function initializeFilters() {
+            // Populate team checkboxes
+            const teamList = document.getElementById('teamCheckboxList');
+            mockTeams.forEach(team => {
+                const checkbox = document.createElement('label');
+                checkbox.className = 'flex items-center gap-2 p-2 hover:bg-background rounded-md cursor-pointer transition-colors';
+                checkbox.innerHTML = `
+                    <input type="checkbox" value="${team.name}" class="team-checkbox w-4 h-4 text-primary rounded border-border focus:ring-primary">
+                    <img src="${team.badge}" alt="Escudo do ${team.name}" class="w-6 h-6 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=100&auto=format&fit=crop'">
+                    <span class="text-sm text-text-primary">${team.name}</span>
+                `;
+                teamList.appendChild(checkbox);
+            });
+
+            // Team filter dropdown toggle
+            const teamFilterBtn = document.getElementById('teamFilterBtn');
+            const teamDropdown = document.getElementById('teamDropdown');
+            
+            teamFilterBtn.addEventListener('click', () => {
+                teamDropdown.classList.toggle('hidden');
+                teamFilterBtn.setAttribute('aria-expanded', !teamDropdown.classList.contains('hidden'));
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!teamFilterBtn.contains(e.target) && !teamDropdown.contains(e.target)) {
+                    teamDropdown.classList.add('hidden');
+                    teamFilterBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Clear team filter
+            document.getElementById('clearTeamFilter').addEventListener('click', () => {
+                document.querySelectorAll('.team-checkbox').forEach(cb => cb.checked = false);
+                updateTeamFilterText();
+            });
+
+            // Update team filter text on checkbox change
+            document.querySelectorAll('.team-checkbox').forEach(checkbox => {
+                checkbox.addEventListener('change', updateTeamFilterText);
+            });
+
+            // Apply filters button
+            document.getElementById('applyFilters').addEventListener('click', applyFilters);
+
+            // Reset filters button
+            document.getElementById('resetFilters').addEventListener('click', resetFilters);
+
+            // Search input
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+            });
+
+            // Competition filter
+            document.getElementById('competitionFilter').addEventListener('change', (e) => {
+                selectedCompetition = e.target.value;
+            });
+
+            // Month navigation
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                calendar.prev();
+                updateMonthTitle();
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                calendar.next();
+                updateMonthTitle();
+            });
+
+            document.getElementById('todayBtn').addEventListener('click', () => {
+                calendar.today();
+                updateMonthTitle();
+            });
+
+            // Modal close
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+            document.getElementById('modalBackdrop').addEventListener('click', closeModal);
+        }
+
+        function updateTeamFilterText() {
+            const checkedTeams = Array.from(document.querySelectorAll('.team-checkbox:checked')).map(cb => cb.value);
+            const filterText = document.getElementById('teamFilterText');
+            
+            if (checkedTeams.length === 0) {
+                filterText.textContent = 'Todos os times';
+                filterText.classList.add('text-text-secondary');
+            } else if (checkedTeams.length === 1) {
+                filterText.textContent = checkedTeams[0];
+                filterText.classList.remove('text-text-secondary');
+            } else {
+                filterText.textContent = `${checkedTeams.length} times selecionados`;
+                filterText.classList.remove('text-text-secondary');
+            }
+        }
+
+        function applyFilters() {
+            selectedTeams = Array.from(document.querySelectorAll('.team-checkbox:checked')).map(cb => cb.value);
+            saveFilterPreferences();
+            calendar.removeAllEvents();
+            calendar.addEventSource(getFilteredEvents());
+            updateActiveFilters();
+            updateStats();
+            
+            // Close team dropdown
+            document.getElementById('teamDropdown').classList.add('hidden');
+        }
+
+        function resetFilters() {
+            selectedTeams = [];
+            selectedCompetition = '';
+            searchQuery = '';
+            
+            document.querySelectorAll('.team-checkbox').forEach(cb => cb.checked = false);
+            document.getElementById('competitionFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            updateTeamFilterText();
+            
+            calendar.removeAllEvents();
+            calendar.addEventSource(getFilteredEvents());
+            updateActiveFilters();
+            updateStats();
+            
+            localStorage.removeItem('calendarFilters');
+        }
+
+        function updateActiveFilters() {
+            const activeFiltersDiv = document.getElementById('activeFilters');
+            const filterTags = document.getElementById('filterTags');
+            filterTags.innerHTML = '';
+            
+            let hasFilters = false;
+
+            if (selectedTeams.length > 0) {
+                hasFilters = true;
+                selectedTeams.forEach(team => {
+                    const tag = createFilterTag(team, () => {
+                        const checkbox = Array.from(document.querySelectorAll('.team-checkbox')).find(cb => cb.value === team);
+                        if (checkbox) checkbox.checked = false;
+                        applyFilters();
+                    });
+                    filterTags.appendChild(tag);
+                });
+            }
+
+            if (selectedCompetition) {
+                hasFilters = true;
+                const competitionText = document.getElementById('competitionFilter').selectedOptions[0].text;
+                const tag = createFilterTag(competitionText, () => {
+                    document.getElementById('competitionFilter').value = '';
+                    selectedCompetition = '';
+                    applyFilters();
+                });
+                filterTags.appendChild(tag);
+            }
+
+            if (searchQuery) {
+                hasFilters = true;
+                const tag = createFilterTag(`Busca: "${searchQuery}"`, () => {
+                    document.getElementById('searchInput').value = '';
+                    searchQuery = '';
+                    applyFilters();
+                });
+                filterTags.appendChild(tag);
+            }
+
+            activeFiltersDiv.classList.toggle('hidden', !hasFilters);
+        }
+
+        function createFilterTag(text, onRemove) {
+            const tag = document.createElement('span');
+            tag.className = 'inline-flex items-center gap-2 bg-primary-50 text-primary px-3 py-1 rounded-full text-sm';
+            tag.innerHTML = `
+                ${text}
+                <button class="hover:text-primary-700 transition-colors" aria-label="Remover filtro ${text}">
+                    <img src="https://api.iconify.design/mdi:close.svg?color=%231B4B8C" alt="Remover" class="w-4 h-4">
+                </button>
+            `;
+            tag.querySelector('button').addEventListener('click', onRemove);
+            return tag;
+        }
+
+        function updateMonthTitle() {
+            const date = calendar.getDate();
+            const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 
+                          'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+            document.getElementById('currentMonthTitle').textContent = `${months[date.getMonth()]} ${date.getFullYear()}`;
+        }
+
+        function updateStats() {
+            const filtered = getFilteredEvents();
+            document.getElementById('monthGamesCount').textContent = filtered.length;
+            
+            const classics = filtered.filter(e => e.extendedProps.matchData.isClassic).length;
+            document.getElementById('classicsCount').textContent = classics;
+            
+            const competitions = new Set(filtered.map(e => e.extendedProps.matchData.competition));
+            document.getElementById('competitionsCount').textContent = competitions.size;
+        }
+
+        function showMatchModal(match) {
+            const modal = document.getElementById('matchModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modalContent.innerHTML = `
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-accent-50 text-accent text-xs font-semibold px-3 py-1 rounded-full">
+                            ${match.competition}
+                        </span>
+                        ${match.isClassic ? '<span class="bg-warning-50 text-warning text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1"><img src="https://api.iconify.design/mdi:fire.svg?color=%23D97706" alt="Clássico" class="w-3 h-3">Clássico</span>' : ''}
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-primary mb-1">${match.homeTeam} vs ${match.awayTeam}</h3>
+                    <p class="text-sm text-text-secondary">${match.phase}</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 mb-6">
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-3 bg-primary-50 rounded-full flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=100&h=100&fit=crop" alt="Escudo do ${match.homeTeam}" class="w-16 h-16 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=100&auto=format&fit=crop'">
+                        </div>
+                        <h4 class="font-heading font-bold text-primary">${match.homeTeam}</h4>
+                        <p class="text-xs text-text-secondary">Casa</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 mx-auto mb-3 bg-secondary-50 rounded-full flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=100&h=100&fit=crop" alt="Escudo do ${match.awayTeam}" class="w-16 h-16 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=100&auto=format&fit=crop'">
+                        </div>
+                        <h4 class="font-heading font-bold text-primary">${match.awayTeam}</h4>
+                        <p class="text-xs text-text-secondary">Visitante</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-center gap-3 p-3 bg-background rounded-md">
+                        <img src="https://api.iconify.design/mdi:calendar.svg?color=%231B4B8C" alt="Data" class="w-5 h-5">
+                        <div>
+                            <p class="text-xs text-text-secondary">Data e Horário</p>
+                            <p class="font-semibold text-primary">${formatDate(match.date)} às ${match.time}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-background rounded-md">
+                        <img src="https://api.iconify.design/mdi:stadium.svg?color=%231B4B8C" alt="Estádio" class="w-5 h-5">
+                        <div>
+                            <p class="text-xs text-text-secondary">Estádio</p>
+                            <p class="font-semibold text-primary">${match.stadium}</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 p-3 bg-background rounded-md">
+                        <img src="https://api.iconify.design/mdi:map-marker.svg?color=%231B4B8C" alt="Cidade" class="w-5 h-5">
+                        <div>
+                            <p class="text-xs text-text-secondary">Cidade</p>
+                            <p class="font-semibold text-primary">${match.city}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-3">
+                    <button class="btn-accent flex-1 flex items-center justify-center gap-2" onclick="followMatch(${match.id})">
+                        <img src="https://api.iconify.design/mdi:star-outline.svg?color=%23FFFFFF" alt="Seguir" class="w-5 h-5">
+                        Seguir Jogo
+                    </button>
+                    <a href="daily_match_details.html?date=${match.date}" class="btn-primary flex-1 flex items-center justify-center gap-2">
+                        <img src="https://api.iconify.design/mdi:information-outline.svg?color=%23FFFFFF" alt="Detalhes" class="w-5 h-5">
+                        Ver Detalhes
+                    </a>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('matchModal').classList.add('hidden');
+        }
+
+        function followMatch(matchId) {
+            // Save to localStorage
+            let followedMatches = JSON.parse(localStorage.getItem('followedMatches') || '[]');
+            if (!followedMatches.includes(matchId)) {
+                followedMatches.push(matchId);
+                localStorage.setItem('followedMatches', JSON.stringify(followedMatches));
+                alert('Jogo adicionado aos favoritos!');
+            } else {
+                alert('Este jogo já está nos seus favoritos!');
+            }
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr + 'T00:00:00');
+            return date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        }
+
+        function saveFilterPreferences() {
+            const filters = {
+                teams: selectedTeams,
+                competition: selectedCompetition,
+                search: searchQuery
+            };
+            localStorage.setItem('calendarFilters', JSON.stringify(filters));
+        }
+
+        function loadFilterPreferences() {
+            const saved = localStorage.getItem('calendarFilters');
+            if (saved) {
+                const filters = JSON.parse(saved);
+                selectedTeams = filters.teams || [];
+                selectedCompetition = filters.competition || '';
+                searchQuery = filters.search || '';
+
+                // Apply saved filters to UI
+                selectedTeams.forEach(team => {
+                    const checkbox = Array.from(document.querySelectorAll('.team-checkbox')).find(cb => cb.value === team);
+                    if (checkbox) checkbox.checked = true;
+                });
+                
+                if (selectedCompetition) {
+                    document.getElementById('competitionFilter').value = selectedCompetition;
+                }
+                
+                if (searchQuery) {
+                    document.getElementById('searchInput').value = searchQuery;
+                }
+
+                updateTeamFilterText();
+                updateActiveFilters();
+            }
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
