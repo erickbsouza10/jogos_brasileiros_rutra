@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +17,12 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .loading-container {
             text-align: center;
             color: white;
         }
-        
+
         .loading-spinner {
             width: 50px;
             height: 50px;
@@ -31,27 +32,34 @@
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         .loading-text {
             font-size: 18px;
             margin-bottom: 10px;
         }
-        
+
         .app-title {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 30px;
         }
     </style>
-  
-  <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fcalendario8024back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.13"></script>
-  <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
-  </head>
+
+    <script type="module" async
+        src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fcalendario8024back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.13"></script>
+    <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+</head>
+
 <body>
     <div class="loading-container">
         <h1 class="app-title">Calendario Futebol 2026</h1>
@@ -61,10 +69,19 @@
 
     <script>
         // Redirect to the monthly calendar view after a brief loading animation
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = 'pages/daily_match_details.html';
         }, 2000);
     </script>
-<script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+    <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js");
+        }
+    </script>
+
 </body>
+
 </html>
