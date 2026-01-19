@@ -1,18 +1,20 @@
 export default {
-  campeonato: "Supercopa Rei 2026",
-  formato: "Final Única",
+  campeonato: "Supercopa do Brasil 2026",
+  formato: "Jogo Único",
   jogos: [
     {
       data: "2026-02-01",
-      horario: "16:00",
-      estadio: "Arena BRB Mané Garrincha (Brasília)",
+      horario: "TBD",
+      estadio: "Arena BRB Mané Garrincha",
+      transmissao: "TBD",
       mandante: {
-        id: "flamengo"
+        id: "flamengo",
+        nome: "Flamengo"
       },
       visitante: {
-        id: "corinthians"
-      },
-      transmissao: "Canais esportivos nacionais (ex.: TV paga e possíveis sinais abertos)",
+        id: "corinthians",
+        nome: "Corinthians"
+      }
     }
   ]
 };

@@ -183,6 +183,12 @@ export default {
                     cor_principal: "#000000"
                 },
                 {
+                    id: "madureira",
+                    nome: "Madureira",
+                    escudo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQBNSBKH6Z5a1ZLYLuxR6jxE-LZmitM-cr2A&s",
+                    cor_principal: "#000000"
+                },
+                {
                     id: "cruzeiro",
                     nome: "Cruzeiro",
                     escudo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/500px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png",
@@ -278,6 +284,18 @@ export default {
                     id: "remo",
                     nome: "Remo",
                     escudo: "https://www.clubedoremo.com.br/images/escudo-simbolo.png",
+                    cor_principal: "#F9C300"
+                },
+                {
+                    id: "boavista",
+                    nome: "Boa Vista",
+                    escudo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Boavista_Sport_Club_SAF_logo.png",
+                    cor_principal: "#F9C300"
+                },
+                {
+                    id: "ituano",
+                    nome: "Ituano",
+                    escudo: "https://upload.wikimedia.org/wikipedia/pt/2/28/ItuanoFC.png",
                     cor_principal: "#F9C300"
                 },
                 {
