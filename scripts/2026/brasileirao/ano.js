@@ -5,7 +5,7 @@ export default {
     // === 1ª RODADA ===
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "19:00",
       estadio: null,
       transmissao: null,
       mandante: { id: "atletico-mg", nome: "Atlético-MG" },
@@ -13,7 +13,7 @@ export default {
     },
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "19:30",
       estadio: null,
       transmissao: null,
       mandante: { id: "fluminense", nome: "Fluminense" },
@@ -21,7 +21,7 @@ export default {
     },
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "20:00",
       estadio: null,
       transmissao: null,
       mandante: { id: "mirassol", nome: "Mirassol" },
@@ -29,7 +29,7 @@ export default {
     },
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "20:00",
       estadio: null,
       transmissao: null,
       mandante: { id: "chapecoense", nome: "Chapecoense" },
@@ -37,7 +37,7 @@ export default {
     },
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "21:30",
       estadio: null,
       transmissao: null,
       mandante: { id: "sao-paulo", nome: "São Paulo" },
@@ -45,7 +45,7 @@ export default {
     },
     {
       data: "2026-01-29",
-      horario: null,
+      horario: "20:00",
       estadio: null,
       transmissao: null,
       mandante: { id: "corinthians", nome: "Corinthians" },
@@ -53,7 +53,7 @@ export default {
     },
     {
       data: "2026-01-29",
-      horario: null,
+      horario: "21:30",
       estadio: null,
       transmissao: null,
       mandante: { id: "botafogo-rj", nome: "Botafogo" },
@@ -110,40 +110,8 @@ export default {
       transmissao: null,
       mandante: { id: "sao-paulo", nome: "São Paulo" },
       visitante: { id: "gremio", nome: "Grêmio" }
-    },
-
-    // === 4ª RODADA ===
-    {
-      data: "2026-02-18",
-      horario: null,
-      estadio: null,
-      transmissao: null,
-      mandante: { id: "vasco", nome: "Vasco da Gama" },
-      visitante: { id: "internacional", nome: "Internacional" }
-    },
-    {
-      data: "2026-02-18",
-      horario: null,
-      estadio: null,
-      transmissao: null,
-      mandante: { id: "santos", nome: "Santos" },
-      visitante: { id: "flamengo", nome: "Flamengo" }
-    },
-    {
-      data: "2026-02-18",
-      horario: null,
-      estadio: null,
-      transmissao: null,
-      mandante: { id: "sao-paulo", nome: "São Paulo" },
-      visitante: { id: "fluminense", nome: "Fluminense" }
-    },
-    {
-      data: "2026-02-18",
-      horario: null,
-      estadio: null,
-      transmissao: null,
-      mandante: { id: "palmeiras", nome: "Palmeiras" },
-      visitante: { id: "corinthians", nome: "Corinthians" }
     }
+
+   
   ]
 };

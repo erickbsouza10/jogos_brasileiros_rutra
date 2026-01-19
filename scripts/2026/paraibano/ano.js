@@ -29,7 +29,7 @@ export default {
     },
     {
       data: "2026-01-21",
-      horario: null,
+      horario: "15:00",
       estadio: "Toca do Papão",
       mandante: { id: "confianca", nome: "Confiança-PB" },
       visitante: { id: "botafogo-pb", nome: "Botafogo-PB" },
@@ -37,7 +37,7 @@ export default {
     },
     {
       data: "2026-01-22",
-      horario: null,
+      horario: "19:30",
       estadio: "Amigão",
       mandante: { id: "campinense", nome: "Campinense" },
       visitante: { id: "nacional-patos", nome: "Nacional de Patos" },
@@ -45,7 +45,7 @@ export default {
     },
     {
       data: "2026-01-22",
-      horario: null,
+      horario: "19:30",
       estadio: "Pereirão",
       mandante: { id: "pombal", nome: "Pombal" },
       visitante: { id: "treze", nome: "Treze" },
@@ -53,7 +53,7 @@ export default {
     },
     {
       data: "2026-01-24",
-      horario: null,
+      horario: "17:00",
       estadio: "Almeidão",
       mandante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       visitante: { id: "sousa", nome: "Sousa" },
@@ -61,7 +61,7 @@ export default {
     },
     {
       data: "2026-01-25",
-      horario: null,
+      horario: "18:00",
       estadio: "Amigão",
       mandante: { id: "treze", nome: "Treze" },
       visitante: { id: "atletico-pb", nome: "Atlético-PB" },
@@ -69,7 +69,7 @@ export default {
     },
     {
       data: "2026-01-25",
-      horario: null,
+      horario: "17:00",
       estadio: "Pereirão",
       mandante: { id: "pombal", nome: "Pombal" },
       visitante: { id: "campinense", nome: "Campinense" },
@@ -77,7 +77,7 @@ export default {
     },
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "15:00",
       estadio: "Toca do Papão",
       mandante: { id: "confianca-pb", nome: "Confiança-PB" },
       visitante: { id: "campinense", nome: "Campinense" },
@@ -85,7 +85,7 @@ export default {
     },
     {
       data: "2026-01-28",
-      horario: null,
+      horario: "22:30",
       estadio: "Almeidão",
       mandante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       visitante: { id: "pombal", nome: "Pombal" },
@@ -93,7 +93,7 @@ export default {
     },
     {
       data: "2026-01-31",
-      horario: null,
+      horario: "17:00",
       estadio: "Amigão",
       mandante: { id: "treze", nome: "Treze" },
       visitante: { id: "confianca-pb", nome: "Confiança-PB" },
@@ -103,7 +103,7 @@ export default {
     // ===== FEVEREIRO (DATAS CONFIRMADAS) =====
     {
       data: "2026-02-01",
-      horario: null,
+      horario: "16:30",
       estadio: "Amigão",
       mandante: { id: "campinense", nome: "Campinense" },
       visitante: { id: "botafogo-pb", nome: "Botafogo-PB" },
