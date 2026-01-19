@@ -41,7 +41,7 @@ export default {
       horario: "18:00",
       estadio: "São Januário",
       mandante: { id: "vasco", nome: "Vasco" },
-      visitante: { id: "nova-iguacu", nome: "Nova Iguaçu" },
+      visitante: { id: "Nova", nome: "Nova Iguaçu" },
       transmissao: "TV/Streaming a confirmar"
     },
     {
@@ -56,7 +56,7 @@ export default {
       data: "2026-01-22",
       horario: "21:30",
       estadio: "A definir",
-      mandante: { id: "nova-iguacu", nome: "Nova Iguaçu" },
+      mandante: { id: "Nova", nome: "Nova Iguaçu" },
       visitante: { id: "fluminense", nome: "Fluminense" },
       transmissao: "TV/Streaming a confirmar"
     },
@@ -91,7 +91,7 @@ export default {
       horario: "21:00",
       estadio: "Maracanã",
       mandante: { id: "flamengo", nome: "Flamengo" },
-      visitante: { id: "sampaio-correa", nome: "Sampaio Corrêa-RJ" },
+      visitante: { id: "Sampaio-Correia", nome: "Sampaio Corrêa-RJ" },
       transmissao: "TV/Streaming a confirmar"
     },
     {

@@ -50,7 +50,7 @@ export default {
       horario: "18:30",
       estadio: "Vila Belmiro",
       mandante: { id: "santos", nome: "Santos" },
-      visitante: { id: "bragantino", nome: "Red Bull Bragantino" },
+      visitante: { id: "Bragantino", nome: "Red Bull Bragantino" },
       transmissao: "Premiere"
     },
     {

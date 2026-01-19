@@ -171,7 +171,7 @@ export default {
                     cor_principal: "#000000"
                 },
                 {
-                    id: "red-bull-bragantino",
+                    id: "Bragantino",
                     nome: "Red Bull Bragantino",
                     escudo: "https://upload.wikimedia.org/wikipedia/pt/9/9e/RedBullBragantino.png",
                     cor_principal: "#D50032"
@@ -180,6 +180,30 @@ export default {
                     id: "corinthians",
                     nome: "Corinthians",
                     escudo: "https://images.seeklogo.com/logo-png/12/2/sc-corinthians-paulista-logo-png_seeklogo-123174.png",
+                    cor_principal: "#000000"
+                },
+                {
+                    id: "novorizontino",
+                    nome: "Novorizontino",
+                    escudo: "https://upload.wikimedia.org/wikipedia/pt/9/9e/Gr%C3%AAmio_Esportivo_Novorizontino_logo.png",
+                    cor_principal: "#000000"
+                },
+                {
+                    id: "Sampaio-Correia",
+                    nome: "Sampaio Correia",
+                    escudo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy31Hmhsyc7nLHn7MXt8veJ7yGiTJI977P_w&s",
+                    cor_principal: "#000000"
+                },
+                {
+                    id: "confianca",
+                    nome: "Confiança",
+                    escudo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2EuIeXPIV731RQSl3tYfJkTrk8DUHhC82pA&s",
+                    cor_principal: "#000000"
+                }, 
+                {
+                    id: "Nova",
+                    nome: "Nova Iguaçu",
+                    escudo: "https://upload.wikimedia.org/wikipedia/pt/7/7a/NovaIguacuFC.png",
                     cor_principal: "#000000"
                 },
                 {

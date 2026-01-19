@@ -31,7 +31,7 @@ export default {
       data: "2026-01-21",
       horario: null,
       estadio: "Toca do Papão",
-      mandante: { id: "confianca-pb", nome: "Confiança-PB" },
+      mandante: { id: "confianca", nome: "Confiança-PB" },
       visitante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       transmissao: "GE PB"
     },
