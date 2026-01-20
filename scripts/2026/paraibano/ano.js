@@ -110,32 +110,25 @@ export default {
 
     // ===== FEVEREIRO =====
     {
-      data: "2026-02-01",
-      horario: "18:00",
+      data: "2026-01-31",
+      horario: "16:30",
       estadio: "Amigão",
       mandante: { id: "campinense", nome: "Campinense" },
       visitante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       transmissao: "GE PB / Rede Paraíba"
     },
+
+    // {
+    //   data: "2026-02-11",
+    //   horario: null,
+    //   estadio: "Amigão",
+    //   mandante: { id: "treze", nome: "Treze" },
+    //   visitante: { id: "confianca-pb", nome: "Confiança-PB" },
+    //   transmissao: "GE PB / Rede Paraíba"
+    // },
     {
-      data: "2026-02-04",
-      horario: null,
-      estadio: "Marizão",
-      mandante: { id: "treze", nome: "Treze" },
-      visitante: { id: "sousa", nome: "Sousa" },
-      transmissao: "GE PB / Rede Paraíba"
-    },
-    {
-      data: "2026-02-11",
-      horario: null,
-      estadio: "Amigão",
-      mandante: { id: "treze", nome: "Treze" },
-      visitante: { id: "confianca-pb", nome: "Confiança-PB" },
-      transmissao: "GE PB / Rede Paraíba"
-    },
-    {
-      data: "2026-02-20",
-      horario: null,
+      data: "2026-02-21",
+      horario: "A definir",
       estadio: "Amigão",
       mandante: { id: "treze", nome: "Treze" },
       visitante: { id: "campinense", nome: "Campinense" },
@@ -143,7 +136,7 @@ export default {
     },
     {
       data: "2026-02-27",
-      horario: null,
+      horario: "21:00",
       estadio: "Almeidão",
       mandante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       visitante: { id: "treze", nome: "Treze" },
@@ -151,5 +144,3 @@ export default {
     }
   ]
 };
-
-

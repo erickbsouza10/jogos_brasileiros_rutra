@@ -4,9 +4,9 @@ export default {
   jogos: [
     {
       data: "2026-02-18",
-      horario: "21:30", // horário-base previsto (Brasília; pode variar por confirmação oficial)
+      horario: "19:00", // horário oficial de Brasília
       estadio: "Estádio El Teniente, Rancagua (CHI)",
-      transmissao: "ESPN / Disney+ / ge", // transmissões previstas para a fase preliminar
+      transmissao: "Paramount+",
       mandante: {
         id: "ohiggins-chl",
         nome: "O'Higgins"
@@ -19,15 +19,15 @@ export default {
     },
     {
       data: "2026-02-25",
-      horario: "19:00", // horário-base previsto (Brasília; confirmar conforme tabela oficial)
+      horario: "19:00",
       estadio: "Arena Fonte Nova, Salvador (BRA)",
-      transmissao: "ESPN / Disney+ / ge",
+      transmissao: "Paramount+",
       mandante: {
         id: "bahia",
         nome: "Bahia"
       },
       visitante: {
-        id: "higgins",
+        id: "ohiggins-chl",
         nome: "O'Higgins"
       },
       fase_libertadores: "2ª fase preliminar – volta"
@@ -35,11 +35,11 @@ export default {
     {
       data: "2026-02-18",
       horario: "21:30",
-      estadio: "Estádio em Bolívia (TBD)",
-      transmissao: "ESPN / Disney+ / ge",
+      estadio: "Estádio Víctor Agustín Ugarte, Potosí (BOL)",
+      transmissao: "Globoplay / ge / ESPN / Disney+",
       mandante: {
-        id: "adversario-bolivia",
-        nome: "Representante da Bolívia (TBD)"
+        id: "nacional-potosi-bol",
+        nome: "Nacional Potosí"
       },
       visitante: {
         id: "botafogo-rj",
@@ -51,14 +51,14 @@ export default {
       data: "2026-02-25",
       horario: "21:30",
       estadio: "Estádio Nílton Santos, Rio de Janeiro (BRA)",
-      transmissao: "ESPN / Disney+ / ge",
+      transmissao: "Globoplay / ge / ESPN / Disney+",
       mandante: {
         id: "botafogo-rj",
         nome: "Botafogo"
       },
       visitante: {
-        id: "adversario-bolivia",
-        nome: "Representante da Bolívia (TBD)"
+        id: "nacional-potosi-bol",
+        nome: "Nacional Potosí"
       },
       fase_libertadores: "2ª fase preliminar – volta"
     }

@@ -4,6 +4,8 @@ import paulista from "../scripts/2026/paulista/ano.js";
 import carioca from "../scripts/2026/carioca/ano.js";
 import supercopa from "../scripts/2026/supercopa/ano.js";
 import recopa from "../scripts/2026/recopa/ano.js";
+import brasileirao from "../scripts/2026/brasileirao/ano.js";
+
 
 /* ===============================
    NORMALIZA UM JOGO
@@ -45,16 +47,18 @@ function normalizarCampeonato(camp) {
 /* ===============================
    EXPORT
 ================================ */
-export async function carregarJogosESPN() {
+export async function carregarJogosLocais() {
   const campeonatos = [
     paraibano,
     paulista,
     carioca,
     supercopa,
-    recopa
+    recopa,
+    brasileirao // 👈 NOVO
   ];
 
   return campeonatos
     .map(normalizarCampeonato)
     .filter(Boolean);
 }
+

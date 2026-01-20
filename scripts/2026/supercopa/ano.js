@@ -6,7 +6,7 @@ export default {
       data: "2026-02-01",
       horario: "16:00",
       estadio: "Arena BRB Mané Garrincha",
-      transmissao: "TBD",
+      transmissao: "Globo",
       mandante: {
         id: "flamengo",
         nome: "Flamengo"

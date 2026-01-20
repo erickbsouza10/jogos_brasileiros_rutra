@@ -1,5 +1,5 @@
-import { carregarJogosESPN } from "./jogos-loader.js";
-import { carregarMesESPN } from "./espn-mes-loader.js";
+import { carregarJogosLocais } from "./jogos-loader.js";
+
 const CORES_CAMPEONATOS = {
     paulista: {
         bg: "#EEF2FF",
@@ -561,10 +561,10 @@ function renderizarMes(mes) {
 
             section.innerHTML = `
         <header class="flex items-center justify-between">
-          <h3 class="text-2xl font-heading font-bold text-primary mt-6" style="margin-top: 15px; font-weight: 600; font-size: 30px ">
+          <h3 class="text-2xl font-heading font-bold text-primary mt-6" style="margin-top: 15px; font-weight: 600; font-size: 20px; text-transform: uppercase; ">
             ${formatDateBR(dateObj)}
           </h3>
-          <span class="text-sm text-primary capitalize" style="font-size: 20px">
+          <span class="text-sm text-primary capitalize" style="font-size: 20px; font-size: 20px; text-transform: uppercase; margin-top: 15px">
             ${formatWeekDay(dateObj)}
           </span>
         </header>
@@ -639,30 +639,17 @@ document.addEventListener("click", (e) => {
 });
 
 async function carregarEMostrarMes(mes) {
-    if (mesesRenderizados.has(mes)) {
-        return;
-    }
+    if (mesesRenderizados.has(mes)) return;
 
-
-    // 1️⃣ campeonatos locais (UMA vez só)
+    // 🔹 carrega campeonatos locais apenas uma vez
     if (jogos2026.length === 0) {
-        const locais = await carregarJogosESPN();
+        const locais = await carregarJogosLocais(); // pode renomear depois
         jogos2026.push(...locais);
-    }
-
-    // 2️⃣ brasileirão via ESPN (por mês)
-    const jogosBrasileirao = await carregarMesESPN(anoAtual, mes);
-
-    if (jogosBrasileirao.length > 0) {
-        jogos2026.push({
-            campeonato: "Campeonato Brasileiro Série A 2026",
-            fase: "Rodada",
-            jogos: jogosBrasileirao
-        });
     }
 
     renderizarMes(mes);
 }
+
 
 
 
