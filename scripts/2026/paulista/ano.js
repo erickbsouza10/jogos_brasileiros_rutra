@@ -68,7 +68,7 @@ export default {
     {
       data: "2026-01-21",
       horario: "19:30",
-      estadio: "Morenum",
+      estadio: "Morumbi",
       mandante: { id: "sao-paulo", nome: "São Paulo" },
       visitante: { id: "portuguesa", nome: "Portuguesa" },
       transmissao: null

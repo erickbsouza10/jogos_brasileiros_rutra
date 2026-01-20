@@ -561,10 +561,10 @@ function renderizarMes(mes) {
 
             section.innerHTML = `
         <header class="flex items-center justify-between">
-          <h3 class="text-2xl font-heading font-bold text-primary mt-6" style="margin-top: 20px">
+          <h3 class="text-2xl font-heading font-bold text-primary mt-6" style="margin-top: 15px; font-weight: 600; font-size: 30px ">
             ${formatDateBR(dateObj)}
           </h3>
-          <span class="text-sm text-text-secondary capitalize">
+          <span class="text-sm text-primary capitalize" style="font-size: 20px">
             ${formatWeekDay(dateObj)}
           </span>
         </header>
