@@ -4,7 +4,7 @@ export default {
   jogos: [
     {
       data: "2026-02-01",
-      horario: "TBD",
+      horario: "16:00",
       estadio: "Arena BRB Mané Garrincha",
       transmissao: "TBD",
       mandante: {

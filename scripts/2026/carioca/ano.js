@@ -55,7 +55,7 @@ export default {
     {
       data: "2026-01-22",
       horario: "21:30",
-      estadio: "A definir",
+      estadio: "Luso Brasileiro",
       mandante: { id: "Nova", nome: "Nova Iguaçu" },
       visitante: { id: "fluminense", nome: "Fluminense" },
       transmissao: "TV/Streaming a confirmar"
@@ -69,12 +69,12 @@ export default {
       transmissao: "TV/Streaming a confirmar"
     },
     {
-      data: "2026-01-31",
-      horario: "21:00",
+      data: "2026-02-02",
+      horario: "20:00",
       estadio: "A definir",
       mandante: { id: "madureira", nome: "Madureira" },
       visitante: { id: "vasco", nome: "Vasco" },
-      transmissao: "TV/Streaming a confirmar"
+      transmissao: "A definir"
     },
 
     // ===== FEVEREIRO =====
@@ -100,14 +100,14 @@ export default {
       estadio: "A definir",
       mandante: { id: "vasco", nome: "Vasco" },
       visitante: { id: "botafogo-rj", nome: "Botafogo" },
-      transmissao: "TV/Streaming a confirmar"
+      transmissao: "A definir"
     },
     {
       data: "2026-02-08",
       horario: "20:30",
       estadio: "Maracanã",
       mandante: { id: "fluminense", nome: "Fluminense" },
-      visitante: { id: "marica", nome: "Maricá" },
+      visitante: { id: "Marica", nome: "Maricá" },
       transmissao: "TV/Streaming a confirmar"
     }
   ]

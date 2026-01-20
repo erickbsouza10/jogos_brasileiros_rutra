@@ -53,7 +53,6 @@
     </main>
 
     <script type="module">
-        import { jogos2026 } from "../js/jogos-loader.js";
         import { getTimeById } from "../js/times-utils.js";
 
         const STORAGE_KEY = "agenda_jogos_selecionados";
@@ -84,24 +83,6 @@
             });
         }
 
-        function encontrarJogoPorId(id) {
-            for (const campeonato of jogos2026) {
-                if (Array.isArray(campeonato.jogos)) {
-                    const achado = campeonato.jogos.find(j =>
-                        `${j.mandante.id}-x-${j.visitante.id}-${j.data}-${j.horario}` === id
-                    );
-                    if (achado) return { campeonato, jogo: achado };
-                }
-
-                if (campeonato.partida) {
-                    const j = campeonato.partida;
-                    const pid = `${j.mandante.id}-x-${j.visitante.id}-${j.data}-${j.horario}`;
-                    if (pid === id) return { campeonato, jogo: j };
-                }
-            }
-            return null;
-        }
-
         /* ===============================
            RENDER
         ================================ */
@@ -118,57 +99,59 @@
                 section.className = "space-y-4";
 
                 section.innerHTML = `
-          <header class="flex items-center justify-between">
-            <h2  style="margin-top: 20px;" class="text-2xl font-heading font-bold text-primary capitalize">
-              ${formatDateBR(dateObj)}
-            </h2>
-            <span class="text-sm text-text-secondary capitalize">
-              ${formatWeekDay(dateObj)}
-            </span>
-          </header>
-        `;
+        <header class="flex items-center justify-between">
+          <h2 class="text-2xl font-heading font-bold text-primary capitalize">
+            ${formatDateBR(dateObj)}
+          </h2>
+          <span class="text-sm text-text-secondary capitalize">
+            ${formatWeekDay(dateObj)}
+          </span>
+        </header>
+      `;
 
                 const lista = document.createElement("div");
                 lista.className = "space-y-3";
 
-                dados[data].forEach(ref => {
-                    const resultado = encontrarJogoPorId(ref.id);
-                    if (!resultado) return;
+                dados[data].forEach(jogo => {
+                    if (!jogo.mandante || !jogo.visitante) return;
 
-                    const { campeonato, jogo } = resultado;
-                    const mandante = getTimeById(jogo.mandante.id);
-                    const visitante = getTimeById(jogo.visitante.id);
+                    const mandante = getTimeById(jogo.mandante.id, jogo.mandante.nome);
+                    const visitante = getTimeById(jogo.visitante.id, jogo.visitante.nome);
 
                     const card = document.createElement("article");
                     card.className = "card flex items-center justify-between";
 
                     card.innerHTML = `
-            <div>
-              <span class="text-xs font-semibold text-accent">
-                ${campeonato.campeonato}
-              </span>
+          <div>
+            <span class="text-xs font-semibold text-accent">
+              ${jogo.campeonato}
+            </span>
 
-              <div class="flex items-center gap-2 mt-1">
-<img 
-  src="${mandante.escudo}" 
-  class="w-6 h-6" 
-  onerror="this.onerror=null;this.src='https://cdn-icons-png.freepik.com/512/786/786346.png';"
-/>
-                <strong>${mandante.nome}</strong>
-                <span class="mx-1">x</span>
-                <strong>${visitante.nome}</strong>
-<img 
-  src="${visitante.escudo}" 
-  class="w-6 h-6" 
-  onerror="this.onerror=null;this.src='https://cdn-icons-png.freepik.com/512/786/786346.png';"
-/>
-              </div>
-            </div>
+            <div class="flex items-center gap-2 mt-1">
+              <img 
+                src="${mandante.escudo}" 
+                class="w-6 h-6"
+                alt="${mandante.nome}"
+                onerror="this.onerror=null;this.src='https://cdn-icons-png.freepik.com/512/786/786346.png';"
+              />
+              <strong>${mandante.nome}</strong>
 
-            <div class="text-sm text-text-secondary">
-              ${jogo.horario}
+              <span class="mx-1">x</span>
+
+              <strong>${visitante.nome}</strong>
+              <img 
+                src="${visitante.escudo}" 
+                class="w-6 h-6"
+                alt="${visitante.nome}"
+                onerror="this.onerror=null;this.src='https://cdn-icons-png.freepik.com/512/786/786346.png';"
+              />
             </div>
-          `;
+          </div>
+
+          <div class="text-sm text-text-secondary">
+            ${jogo.horario ?? "--:--"}
+          </div>
+        `;
 
                     lista.appendChild(card);
                 });
@@ -182,21 +165,108 @@
            AÇÕES
         ================================ */
 
-        document.getElementById("voltarBtn").onclick = () => {
+        document.getElementById("voltarBtn").addEventListener("click", () => {
             window.history.back();
-        };
-
-        document.getElementById("voltarEmptyBtn")?.addEventListener("click", () => {
-            window.location.href = "../daily_match_details.html";
         });
 
-        document.getElementById("limparBtn").onclick = () => {
+        document.getElementById("voltarEmptyBtn")?.addEventListener("click", () => {
+            window.location.href = "./daily_match_details.html";
+        });
+
+        document.getElementById("limparBtn").addEventListener("click", () => {
             if (confirm("Deseja remover todos os jogos selecionados?")) {
                 localStorage.removeItem(STORAGE_KEY);
                 window.location.reload();
             }
-        };
+        });
     </script>
+    <script>
+        /* ===============================
+           MAPA DE ESCUDOS POR NOME (ALT)
+        ================================ */
+        const ESCUDOS_POR_ALT = {
+            "Atlético-MG": "https://upload.wikimedia.org/wikipedia/commons/2/27/Clube_Atl%C3%A9tico_Mineiro_logo.svg",
+            "Palmeiras": "https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg",
+            "Flamengo": "https://upload.wikimedia.org/wikipedia/commons/9/96/Clube_de_Regatas_do_Flamengo_logo.svg",
+            "Corinthians": "https://logodownload.org/wp-content/uploads/2016/11/corinthians-logo-01.png",
+            "São Paulo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/960px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png",
+            "Vasco": "https://upload.wikimedia.org/wikipedia/pt/a/ac/CRVascodaGama.png",
+            "Botafogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Escudo_Botafogo.png/500px-Escudo_Botafogo.png",
+            "Grêmio": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg",
+            "Internacional": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Escudo_do_Sport_Club_Internacional.svg",
+            "Cruzeiro": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZgLejZzik3T0lzJ2vHx5eaUBU1DzIsYyVGw&s",
+            "Bahia": "https://cdn.worldvectorlogo.com/logos/bahia-1.svg",
+            "Vitória": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1VOPpDMQEOqBzB6u8InTfBMK073ozgU0hWQ&s",
+            "Athletico Paranaense": "https://logodownload.org/wp-content/uploads/2018/12/athletico-pr-logo-0.png",
+            "Coritiba": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Coritiba_Foot_Ball_Club_logo.svg/250px-Coritiba_Foot_Ball_Club_logo.svg.png",
+            "Santos": "https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg",
+            "Chapecoense": "https://upload.wikimedia.org/wikipedia/pt/b/bc/Escudo_de_2018_da_Chapecoense.png",
+            "Mirassol": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Mirassol_FC_Escudo.jpg",
+            "Remo": "https://www.clubedoremo.com.br/images/escudo-simbolo.png",
+
+            /* PARAIBANO */
+            "Botafogo-PB": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRANgUhrw7cT0NzbtL25dkTfNWSAreRi1MgQ&s",
+            "Treze": "https://trezefc.com.br/wp-content/uploads/2024/01/escudo.png",
+            "Campinense": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Campinense.png",
+            "Sousa": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/ba/SousaEC.png/120px-SousaEC.png",
+            "Nacional de Patos": "https://upload.wikimedia.org/wikipedia/pt/3/32/NacionalPatos.png",
+            "CSP": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL-Q08krOd8J932UJ9i6l4Us_M5TMbfFhJjg&s",
+            "Serra Branca": "https://upload.wikimedia.org/wikipedia/pt/2/29/SerraBrancaEC.png",
+            "Atlético de Cajazeiras": "https://upload.wikimedia.org/wikipedia/pt/3/38/AtleticoCajazeirenseD.png",
+            "Pombal EC": "https://upload.wikimedia.org/wikipedia/pt/0/0a/Escudo_Pombal.png",
+            "Esporte de Patos": "https://upload.wikimedia.org/wikipedia/pt/c/c8/Esporte_Clube_de_Patos_logo.png",
+            "Atlético-PB": "https://upload.wikimedia.org/wikipedia/pt/3/38/AtleticoCajazeirenseD.png",
+            "Confiança-PB": "https://upload.wikimedia.org/wikipedia/commons/d/dd/AD_Confian%C3%A7a_shield.png"
+        };
+
+        /* ===============================
+           NORMALIZA TEXTO
+        ================================ */
+        function normalizarTexto(txt) {
+            return txt
+                ?.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+        }
+
+        /* ===============================
+           APLICA ESCUDOS PELO ALT
+        ================================ */
+        function aplicarEscudosPorAlt() {
+            document.querySelectorAll("img[alt]").forEach(img => {
+                const alt = img.getAttribute("alt");
+                if (!alt) return;
+
+                const altNormalizado = normalizarTexto(alt);
+
+                for (const nome in ESCUDOS_POR_ALT) {
+                    if (normalizarTexto(nome) === altNormalizado) {
+                        if (img.src !== ESCUDOS_POR_ALT[nome]) {
+                            img.src = ESCUDOS_POR_ALT[nome];
+                        }
+                        return;
+                    }
+                }
+            });
+        }
+
+        /* ===============================
+           OBSERVA CONTEÚDO DINÂMICO
+        ================================ */
+        const observer = new MutationObserver(() => {
+            aplicarEscudosPorAlt();
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        /* PRIMEIRA EXECUÇÃO */
+        document.addEventListener("DOMContentLoaded", aplicarEscudosPorAlt);
+    </script>
+
 
 </body>
 

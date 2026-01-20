@@ -33,12 +33,12 @@
 
                 <!-- Header Actions -->
                 <div class="flex items-center gap-3">
-            
+
                     <button id="favoritesBtn" style="background-color: green;"" class=" btn-primary text-sm px-md h-10
                         flex items-center gap-2" aria-label="Ver jogos seguidos">
                         <img src="https://api.iconify.design/mdi:star.svg?color=%23FFFFFF" alt="Ícone de favoritos"
                             class="w-5 h-5">
-                        <span class="hidden md:inline">Finalizar (<span id="followCount"></span>)</span>
+                        <span class="hidden md:inline">Finalizar</span>
                     </button>
                 </div>
             </div>
@@ -297,16 +297,23 @@
         // Update filter summary bar
         function updateFilterSummary() {
             const filters = JSON.parse(localStorage.getItem(STORAGE_KEYS.FILTERS) || '{}');
-            const hasFilters = (filters.teams && filters.teams.length > 0) ||
-                (filters.competitions && filters.competitions.length > 0) ||
-                (filters.search && filters.search.length > 0);
 
             const summarySection = document.getElementById('filterSummary');
             const activeFiltersDiv = document.getElementById('activeFilters');
 
+            // 🚨 PROTEÇÃO CONTRA NULL (CRÍTICO)
+            if (!summarySection || !activeFiltersDiv) {
+                return;
+            }
+
+            const hasFilters =
+                (filters.teams && filters.teams.length > 0) ||
+                (filters.competitions && filters.competitions.length > 0) ||
+                (filters.search && filters.search.length > 0);
+
             if (hasFilters) {
                 summarySection.classList.remove('hidden');
-                activeFiltersDiv.innerHTML = '';
+                activeFiltersDiv.innerHTML = ''
 
                 // Add team filters
                 if (filters.teams) {
@@ -489,11 +496,96 @@
     <script type="module">
         import { iniciarAgendaMensal } from "../js/jogos-render.js";
         iniciarAgendaMensal();
+
     </script>
 
 
 
 
+    <script>
+        /* ===============================
+           MAPA DE ESCUDOS POR NOME (ALT)
+        ================================ */
+        const ESCUDOS_POR_ALT = {
+            "Atlético-MG": "https://upload.wikimedia.org/wikipedia/commons/2/27/Clube_Atl%C3%A9tico_Mineiro_logo.svg",
+            "Palmeiras": "https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg",
+            "Flamengo": "https://upload.wikimedia.org/wikipedia/commons/9/96/Clube_de_Regatas_do_Flamengo_logo.svg",
+            "Corinthians": "https://logodownload.org/wp-content/uploads/2016/11/corinthians-logo-01.png",
+            "São Paulo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/960px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png",
+            "Vasco": "https://upload.wikimedia.org/wikipedia/pt/a/ac/CRVascodaGama.png",
+            "Botafogo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Escudo_Botafogo.png/500px-Escudo_Botafogo.png",
+            "Grêmio": "https://upload.wikimedia.org/wikipedia/commons/0/08/Gremio_logo.svg",
+            "Internacional": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Escudo_do_Sport_Club_Internacional.svg",
+            "Cruzeiro": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZgLejZzik3T0lzJ2vHx5eaUBU1DzIsYyVGw&s",
+            "Bahia": "https://cdn.worldvectorlogo.com/logos/bahia-1.svg",
+            "Vitória": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1VOPpDMQEOqBzB6u8InTfBMK073ozgU0hWQ&s",
+            "Athletico Paranaense": "https://logodownload.org/wp-content/uploads/2018/12/athletico-pr-logo-0.png",
+            "Coritiba": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Coritiba_Foot_Ball_Club_logo.svg/250px-Coritiba_Foot_Ball_Club_logo.svg.png",
+            "Santos": "https://upload.wikimedia.org/wikipedia/commons/3/35/Santos_logo.svg",
+            "Chapecoense": "https://upload.wikimedia.org/wikipedia/pt/b/bc/Escudo_de_2018_da_Chapecoense.png",
+            "Mirassol": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Mirassol_FC_Escudo.jpg",
+            "Remo": "https://www.clubedoremo.com.br/images/escudo-simbolo.png",
+
+
+            "Botafogo-PB": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRANgUhrw7cT0NzbtL25dkTfNWSAreRi1MgQ&s",
+            "Treze": "https://trezefc.com.br/wp-content/uploads/2024/01/escudo.png",
+            "Campinense": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Campinense.png",
+            "Sousa": "https://upload.wikimedia.org/wikipedia/pt/thumb/b/ba/SousaEC.png/120px-SousaEC.png",
+            "Nacional de Patos": "https://upload.wikimedia.org/wikipedia/pt/3/32/NacionalPatos.png",
+            "CSP": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL-Q08krOd8J932UJ9i6l4Us_M5TMbfFhJjg&s",
+            "Serra Branca": "https://upload.wikimedia.org/wikipedia/pt/2/29/SerraBrancaEC.png",
+            "Atlético de Cajazeiras": "https://upload.wikimedia.org/wikipedia/pt/3/38/AtleticoCajazeirenseD.png",
+            "Pombal EC": "https://upload.wikimedia.org/wikipedia/pt/0/0a/Escudo_Pombal.png",
+            "Esporte de Patos": "https://upload.wikimedia.org/wikipedia/pt/c/c8/Esporte_Clube_de_Patos_logo.png",
+            "Atlético-PB": "https://upload.wikimedia.org/wikipedia/pt/3/38/AtleticoCajazeirenseD.png",
+            "Confiança-PB": "https://upload.wikimedia.org/wikipedia/commons/d/dd/AD_Confian%C3%A7a_shield.png"
+        };
+
+        /* ===============================
+           NORMALIZA TEXTO
+        ================================ */
+        function normalizarTexto(txt) {
+            return txt
+                ?.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim();
+        }
+
+        /* ===============================
+           APLICA ESCUDOS AUTOMATICAMENTE
+        ================================ */
+        function aplicarEscudosPorAlt() {
+            document.querySelectorAll("img[alt]").forEach(img => {
+                const alt = img.getAttribute("alt");
+                if (!alt) return;
+
+                const altNormalizado = normalizarTexto(alt);
+
+                for (const nome in ESCUDOS_POR_ALT) {
+                    if (normalizarTexto(nome) === altNormalizado) {
+                        img.src = ESCUDOS_POR_ALT[nome];
+                        return;
+                    }
+                }
+            });
+        }
+
+        /* ===============================
+           OBSERVA ELEMENTOS DINÂMICOS
+        ================================ */
+        const observer = new MutationObserver(() => {
+            aplicarEscudosPorAlt();
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // primeira execução
+        aplicarEscudosPorAlt();
+    </script>
 
 
 </body>

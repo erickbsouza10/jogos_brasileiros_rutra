@@ -90,7 +90,7 @@ export default {
     {
       categoria: "Brasileiros",
       times: [
-        { id: "athletico-paranaense", nome: "Athletico Paranaense", escudo: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Athletico_Paranaense_logo.svg", cor_principal: "#C8102E" },
+        { id: "athletico-pr", nome: "Athletico Paranaense", escudo: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Athletico_Paranaense_logo.svg", cor_principal: "#C8102E" },
         { id: "atletico-mg", nome: "Atlético Mineiro", escudo: "https://upload.wikimedia.org/wikipedia/commons/2/27/Clube_Atl%C3%A9tico_Mineiro_logo.svg", cor_principal: "#000000" },
         { id: "bahia", nome: "Bahia", escudo: "https://cdn.worldvectorlogo.com/logos/bahia-1.svg", cor_principal: "#004AAD" },
         { id: "botafogo-rj", nome: "Botafogo", escudo: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Botafogo_de_Futebol_e_Regatas_logo.svg", cor_principal: "#000000" },

@@ -31,7 +31,7 @@ export default {
       data: "2026-01-21",
       horario: "15:00",
       estadio: "Toca do Papão",
-      mandante: { id: "confianca", nome: "Confiança-PB" },
+      mandante: { id: "Confianca-PB", nome: "Confiança-PB" },
       visitante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       transmissao: "GE PB"
     },
@@ -64,7 +64,7 @@ export default {
       horario: "18:00",
       estadio: "Amigão",
       mandante: { id: "treze", nome: "Treze" },
-      visitante: { id: "atletico-pb", nome: "Atlético-PB" },
+      visitante: { id: "Atletico-PB", nome: "Atlético-PB" },
       transmissao: "GE PB"
     },
     {
@@ -79,13 +79,13 @@ export default {
       data: "2026-01-28",
       horario: "15:00",
       estadio: "Toca do Papão",
-      mandante: { id: "confianca-pb", nome: "Confiança-PB" },
+      mandante: { id: "Confianca-Paraiba", nome: "Confiança-PB" },
       visitante: { id: "campinense", nome: "Campinense" },
       transmissao: "GE PB"
     },
     {
       data: "2026-01-28",
-      horario: "22:30",
+      horario: "19:30",
       estadio: "Almeidão",
       mandante: { id: "botafogo-pb", nome: "Botafogo-PB" },
       visitante: { id: "pombal", nome: "Pombal" },
@@ -102,7 +102,7 @@ export default {
 
     // ===== FEVEREIRO (DATAS CONFIRMADAS) =====
     {
-      data: "2026-02-01",
+      data: "2026-01-31",
       horario: "16:30",
       estadio: "Amigão",
       mandante: { id: "campinense", nome: "Campinense" },

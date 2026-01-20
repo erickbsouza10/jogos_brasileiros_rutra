@@ -38,7 +38,7 @@ export default {
     {
       data: "2026-01-22",
       horario: "19:30",
-      estadio: "Morumbi",
+      estadio: "Urbano Caldeira",
       mandante: { id: "sao-paulo", nome: "São Paulo" },
       visitante: { id: "corinthians", nome: "Corinthians" },
       transmissao: "Premiere"
@@ -46,8 +46,8 @@ export default {
 
     // ===== FEVEREIRO =====
     {
-      data: "2026-02-01",
-      horario: "18:30",
+      data: "2026-01-25",
+      horario: "16:00",
       estadio: "Vila Belmiro",
       mandante: { id: "santos", nome: "Santos" },
       visitante: { id: "Bragantino", nome: "Red Bull Bragantino" },
@@ -71,10 +71,10 @@ export default {
     },
     {
       data: "2026-02-08",
-      horario: "16:00",
+      horario: "20:30",
       estadio: "Allianz Parque",
-      mandante: { id: "palmeiras", nome: "Palmeiras" },
-      visitante: { id: "sao-paulo", nome: "São Paulo" },
+      mandante: { id: "corinthians", nome: "Corinthians" },
+      visitante: { id: "palmeiras", nome: "Palmeiras" },
       transmissao: "TV Globo"
     },
     {

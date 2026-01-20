@@ -1,4 +1,9 @@
-import { jogos2026 } from "./jogos-loader.js";
+import { carregarJogosESPN } from "./jogos-loader.js";
+import { carregarMesESPN } from "./espn-mes-loader.js";
+
+
+let jogos2026 = [];
+
 import { getTimeById } from "./times-utils.js";
 let mesAtual = new Date().getMonth(); // 0-11
 let anoAtual = new Date().getFullYear();
@@ -24,6 +29,14 @@ function atualizarPreviewJSON() {
         2
     );
 }
+function normalizarJogoESPN(jogo) {
+    return {
+        ...jogo,
+        horario: jogo.horario || "--:--",
+        estadio: jogo.estadio || "A definir",
+        transmissao: "A definir"
+    };
+}
 
 function salvarSelecao() {
     localStorage.setItem(
@@ -44,15 +57,26 @@ function adicionarJogoSelecionado(card) {
     jogosSelecionados[data].push({
         id: card.dataset.jogoId,
         data: card.dataset.data,
-        horario: card.dataset.horario
+        horario: card.dataset.horario,
+        campeonato: card.dataset.campeonato,
+
+        mandante: {
+            id: card.dataset.mandanteId,
+            nome: card.dataset.mandanteNome
+        },
+
+        visitante: {
+            id: card.dataset.visitanteId,
+            nome: card.dataset.visitanteNome
+        }
     });
 
     salvarSelecao();
     atualizarPreviewJSON();
     atualizarBotaoFinalizar();
     updateFollowCount();
-
 }
+
 
 function removerJogoSelecionado(card) {
     const data = card.dataset.data;
@@ -198,11 +222,23 @@ function atualizarBotaoFinalizar() {
         btn.classList.add("hidden");
     }
 }
+function corrigirHorarioESPN(horario) {
+    return horario === "00:30" ? "21:30" : horario;
+}
 
 
 function criarCard(campeonato, jogo) {
-    const mandante = getTimeById(jogo.mandante.id);
-    const visitante = getTimeById(jogo.visitante.id);
+
+    const mandante = getTimeById(
+        jogo.mandante.id,
+        jogo.mandante.nome
+    );
+
+    const visitante = getTimeById(
+        jogo.visitante.id,
+        jogo.visitante.nome
+    );
+
 
     const jogoId = `${jogo.mandante.id}-x-${jogo.visitante.id}-${jogo.data}-${jogo.horario}`;
 
@@ -212,7 +248,15 @@ function criarCard(campeonato, jogo) {
   class="card card-jogo flex gap-4 items-start cursor-pointer"
   data-jogo-id="${jogoId}"
   data-data="${jogo.data}"
-  data-horario="${jogo.horario}"
+  data-horario="${corrigirHorarioESPN(jogo.horario)}"
+
+  data-campeonato="${campeonato.campeonato}"
+
+  data-mandante-id="${jogo.mandante.id}"
+  data-mandante-nome="${jogo.mandante.nome}"
+
+  data-visitante-id="${jogo.visitante.id}"
+  data-visitante-nome="${jogo.visitante.nome}"
 >
 
 
@@ -265,7 +309,8 @@ function criarCard(campeonato, jogo) {
         <div class="flex items-center justify-between text-sm text-text-secondary">
           <div class="flex items-center gap-2">
             ${iconClock()}
-            <span>${jogo.horario}</span>
+            <span>${corrigirHorarioESPN(jogo.horario)}</span>
+
           </div>
 
           <div class="flex items-center gap-2">
@@ -275,7 +320,12 @@ function criarCard(campeonato, jogo) {
 
           <div class="flex items-center gap-2">
             ${iconTV()}
-            <span>${jogo.transmissao}</span>
+            <span>
+  ${typeof jogo.transmissao === "string" && jogo.transmissao.trim()
+            ? jogo.transmissao
+            : "A definir"}
+</span>
+
           </div>
         </div>
 
@@ -286,6 +336,25 @@ function criarCard(campeonato, jogo) {
 function horarioParaMinutos(horario) {
     const [h, m] = horario.split(":").map(Number);
     return h * 60 + m;
+}
+function mostrarLoadingMes(mes) {
+    const loading = document.createElement("div");
+    loading.id = "loading-mes";
+    loading.className = "flex flex-col items-center justify-center py-16 text-text-secondary gap-3";
+
+    loading.innerHTML = `
+    <div class="animate-spin w-8 h-8 border-2 border-accent border-t-transparent rounded-full"></div>
+    <p class="text-sm font-medium">
+      Carregando ${nomeMes(mes)}...
+    </p>
+  `;
+
+    daysContainer.appendChild(loading);
+}
+
+function removerLoadingMes() {
+    const loading = document.getElementById("loading-mes");
+    if (loading) loading.remove();
 }
 
 function diferencaMinutos(h1, h2) {
@@ -314,32 +383,41 @@ function mostrarAvisoFlutuante(card, mensagem) {
         setTimeout(() => aviso.remove(), 200);
     }, 2500);
 }
-
 function ativarSelecaoJogos() {
+    if (daysContainer.dataset.selecaoAtiva === "true") return;
+    daysContainer.dataset.selecaoAtiva = "true";
+
     daysContainer.addEventListener("click", (e) => {
         const card = e.target.closest(".card-jogo");
         if (!card) return;
 
         const checkbox = card.querySelector(".jogo-checkbox");
+        if (!checkbox) return;
 
-        // Se estiver tentando DESMARCAR, libera sempre
+        // DESMARCAR
         if (checkbox.checked) {
             checkbox.checked = false;
             atualizarEstadoCard(card, false);
             removerJogoSelecionado(card);
+            atualizarBotaoFinalizar();
             return;
         }
 
         const dataAtual = card.dataset.data;
-        const horarioAtual = horarioParaMinutos(card.dataset.horario);
+        const horarioAtualStr = card.dataset.horario;
+        if (!horarioAtualStr) return;
 
-        // Busca jogos já selecionados no mesmo dia
-        const selecionados = document.querySelectorAll(
+        const horarioAtual = horarioParaMinutos(horarioAtualStr);
+
+        const selecionadosMesmoDia = document.querySelectorAll(
             `.card-jogo.selecionado[data-data="${dataAtual}"]`
         );
 
-        for (const outro of selecionados) {
-            const horarioOutro = horarioParaMinutos(outro.dataset.horario);
+        for (const outro of selecionadosMesmoDia) {
+            const horarioOutroStr = outro.dataset.horario;
+            if (!horarioOutroStr) continue;
+
+            const horarioOutro = horarioParaMinutos(horarioOutroStr);
 
             if (diferencaMinutos(horarioAtual, horarioOutro) < 105) {
                 mostrarAvisoFlutuante(
@@ -348,10 +426,9 @@ function ativarSelecaoJogos() {
                 );
                 return;
             }
-
         }
 
-        // Se passou na validação → marca
+        // MARCAR
         checkbox.checked = true;
         atualizarEstadoCard(card, true);
         adicionarJogoSelecionado(card);
@@ -408,7 +485,8 @@ function renderizarMes(mes) {
     const jogosPorData = agruparJogosPorData(mes);
     const datas = Object.keys(jogosPorData).sort();
 
-    mesesRenderizados.add(mes);
+
+
 
     // Wrapper do mês
     const wrapperMes = document.createElement("div");
@@ -463,15 +541,28 @@ function renderizarMes(mes) {
     btn.className = "btn-meses";
     btn.textContent = `Ver ${nomeMes(mes + 1)}`;
 
-    btn.onclick = () => {
-        btn.remove();              // remove o botão atual
-        renderizarMes(mes + 1);    // renderiza o próximo mês
+    btn.onclick = async () => {
+        btn.disabled = true;
+        btn.textContent = "Carregando...";
+
+        mesAtual = mes + 1;
+
+        mostrarLoadingMes(mesAtual);
+
+        await carregarEMostrarMes(mesAtual);
+
+        removerLoadingMes();
     };
+
+
+
+
 
     btnContainer.appendChild(btn);
     wrapperMes.appendChild(btnContainer);
 
     daysContainer.appendChild(wrapperMes);
+    ativarSelecaoJogos();
     restaurarSelecao();
 
 }
@@ -497,13 +588,39 @@ document.addEventListener("click", (e) => {
     }
 });
 
+async function carregarEMostrarMes(mes) {
+    if (mesesRenderizados.has(mes)) {
+        return;
+    }
 
 
-export function iniciarAgendaMensal() {
-    ativarSelecaoJogos();
-    renderizarMes(mesAtual);
-    atualizarPreviewJSON();
-    updateFollowCount();
+    // 1️⃣ campeonatos locais (UMA vez só)
+    if (jogos2026.length === 0) {
+        const locais = await carregarJogosESPN();
+        jogos2026.push(...locais);
+    }
 
+    // 2️⃣ brasileirão via ESPN (por mês)
+    const jogosBrasileirao = await carregarMesESPN(anoAtual, mes);
+
+    if (jogosBrasileirao.length > 0) {
+        jogos2026.push({
+            campeonato: "Campeonato Brasileiro Série A 2026",
+            fase: "Rodada",
+            jogos: jogosBrasileirao
+        });
+    }
+
+    renderizarMes(mes);
 }
+
+
+
+export async function iniciarAgendaMensal() {
+    mesAtual = 0;
+    await carregarEMostrarMes(mesAtual);
+}
+
+
+
 
