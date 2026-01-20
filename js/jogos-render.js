@@ -1,6 +1,44 @@
 import { carregarJogosESPN } from "./jogos-loader.js";
 import { carregarMesESPN } from "./espn-mes-loader.js";
+const CORES_CAMPEONATOS = {
+    paulista: {
+        bg: "#EEF2FF",
+        text: "#3730A3",
+        border: "#6366F1"
+    },
+    carioca: {
+        bg: "#ECFEFF",
+        text: "#155E75",
+        border: "#06B6D4"
+    },
+    brasileirao: {
+        bg: "#ECFDF5",
+        text: "#065F46",
+        border: "#10B981"
+    },
+    libertadores: {
+        bg: "#FFF7ED",
+        text: "#9A3412",
+        border: "#F97316"
+    },
+    paraibano: {
+        bg: "#F5F3FF",
+        text: "#5B21B6",
+        border: "#8B5CF6"
+    }
+};
 
+function identificarCampeonato(nome) {
+    const n = nome.toLowerCase();
+
+    if (n.includes("paulista")) return "paulista";
+    if (n.includes("carioca")) return "carioca";
+    if (n.includes("brasileiro")) return "brasileirao";
+    if (n.includes("libertadores")) return "libertadores";
+    if (n.includes("paraibano")) return "paraibano";
+
+    return null;
+}
 
 let jogos2026 = [];
 
@@ -225,6 +263,17 @@ function atualizarBotaoFinalizar() {
 function corrigirHorarioESPN(horario) {
     return horario === "00:30" ? "21:30" : horario;
 }
+function classeCampeonato(nome) {
+    const n = nome.toLowerCase();
+
+    if (n.includes("paulista")) return "campeonato-paulista";
+    if (n.includes("carioca")) return "campeonato-carioca";
+    if (n.includes("brasileiro")) return "campeonato-brasileirao";
+    if (n.includes("libertadores")) return "campeonato-libertadores";
+    if (n.includes("paraibano")) return "campeonato-paraibano";
+
+    return "";
+}
 
 
 function criarCard(campeonato, jogo) {
@@ -242,22 +291,23 @@ function criarCard(campeonato, jogo) {
 
     const jogoId = `${jogo.mandante.id}-x-${jogo.visitante.id}-${jogo.data}-${jogo.horario}`;
 
+    const tipoCampeonato = identificarCampeonato(campeonato.campeonato);
+    const cores = CORES_CAMPEONATOS[tipoCampeonato];
+    const classeCamp = classeCampeonato(campeonato.campeonato);
 
     return `
 <article 
-  class="card card-jogo flex gap-4 items-start cursor-pointer"
+  class="card card-jogo flex gap-4 items-start cursor-pointer ${classeCamp}"
   data-jogo-id="${jogoId}"
   data-data="${jogo.data}"
   data-horario="${corrigirHorarioESPN(jogo.horario)}"
-
   data-campeonato="${campeonato.campeonato}"
-
   data-mandante-id="${jogo.mandante.id}"
   data-mandante-nome="${jogo.mandante.nome}"
-
   data-visitante-id="${jogo.visitante.id}"
   data-visitante-nome="${jogo.visitante.nome}"
 >
+
 
 
 
@@ -276,7 +326,7 @@ function criarCard(campeonato, jogo) {
       <div class="flex-1">
 
         <div class="mb-2">
-          <span class="bg-accent-50 text-accent text-xs font-semibold px-3 py-1 rounded-full">
+<span class="badge-campeonato text-xs font-semibold px-3 py-1 rounded-full">
             ${campeonato.campeonato}
           </span>
         </div>
