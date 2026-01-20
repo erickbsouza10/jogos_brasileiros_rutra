@@ -102,7 +102,7 @@ export default {
 
     // ===== FEVEREIRO =====
     {
-      data: "2026-02-01",
+      data: "2026-01-31",
       horario: "20:30",
       estadio: "Morumbi",
       mandante: { id: "sao-paulo", nome: "São Paulo" },
