@@ -1,0 +1,1268 @@
+{
+  "campeonato": "Campeonato Paulista",
+  "estado": "SP",
+  "fonte": "Sofascore",
+  "total_jogos": 90,
+  "jogos": [
+    {
+      "data": "2021-05-13",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      },
+      "visitante": {
+        "id": "everton",
+        "nome": "Everton"
+      }
+    },
+    {
+      "data": "2021-05-13",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      },
+      "visitante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      }
+    },
+    {
+      "data": "2021-05-14",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      },
+      "visitante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      }
+    },
+    {
+      "data": "2021-05-15",
+      "horario": "11:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      },
+      "visitante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      }
+    },
+    {
+      "data": "2021-05-15",
+      "horario": "14:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      },
+      "visitante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      }
+    },
+    {
+      "data": "2021-05-15",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      },
+      "visitante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      }
+    },
+    {
+      "data": "2021-05-16",
+      "horario": "11:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      },
+      "visitante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      }
+    },
+    {
+      "data": "2021-05-16",
+      "horario": "13:05",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      },
+      "visitante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      }
+    },
+    {
+      "data": "2021-05-16",
+      "horario": "15:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      },
+      "visitante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      }
+    },
+    {
+      "data": "2021-05-16",
+      "horario": "18:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "everton",
+        "nome": "Everton"
+      },
+      "visitante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      }
+    },
+    {
+      "data": "2021-05-18",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      },
+      "visitante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      }
+    },
+    {
+      "data": "2021-05-18",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      },
+      "visitante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      }
+    },
+    {
+      "data": "2021-05-18",
+      "horario": "18:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      },
+      "visitante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      }
+    },
+    {
+      "data": "2021-05-18",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      },
+      "visitante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      }
+    },
+    {
+      "data": "2021-05-19",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      },
+      "visitante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      }
+    },
+    {
+      "data": "2021-05-19",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "everton",
+        "nome": "Everton"
+      },
+      "visitante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      }
+    },
+    {
+      "data": "2021-05-19",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      },
+      "visitante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      }
+    },
+    {
+      "data": "2021-05-19",
+      "horario": "18:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      },
+      "visitante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      }
+    },
+    {
+      "data": "2021-05-19",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      },
+      "visitante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      }
+    },
+    {
+      "data": "2021-05-19",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      },
+      "visitante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      },
+      "visitante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      },
+      "visitante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      },
+      "visitante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      },
+      "visitante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      },
+      "visitante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      },
+      "visitante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      },
+      "visitante": {
+        "id": "everton",
+        "nome": "Everton"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      },
+      "visitante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      },
+      "visitante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      }
+    },
+    {
+      "data": "2021-05-23",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      },
+      "visitante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      }
+    },
+    {
+      "data": "2021-04-24",
+      "horario": "11:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      },
+      "visitante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      }
+    },
+    {
+      "data": "2021-04-24",
+      "horario": "16:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      },
+      "visitante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      }
+    },
+    {
+      "data": "2021-04-24",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      },
+      "visitante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      }
+    },
+    {
+      "data": "2021-04-25",
+      "horario": "11:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      },
+      "visitante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      }
+    },
+    {
+      "data": "2021-04-25",
+      "horario": "13:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      },
+      "visitante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      }
+    },
+    {
+      "data": "2021-04-25",
+      "horario": "18:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      },
+      "visitante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      }
+    },
+    {
+      "data": "2021-04-26",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      },
+      "visitante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      }
+    },
+    {
+      "data": "2021-04-30",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      },
+      "visitante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      }
+    },
+    {
+      "data": "2021-05-01",
+      "horario": "11:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      },
+      "visitante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      }
+    },
+    {
+      "data": "2021-05-01",
+      "horario": "14:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      },
+      "visitante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      }
+    },
+    {
+      "data": "2021-05-01",
+      "horario": "16:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      },
+      "visitante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      }
+    },
+    {
+      "data": "2021-05-01",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "everton",
+        "nome": "Everton"
+      },
+      "visitante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      }
+    },
+    {
+      "data": "2021-05-02",
+      "horario": "13:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      },
+      "visitante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      }
+    },
+    {
+      "data": "2021-05-02",
+      "horario": "15:30",
+      "estadio": null,
+      "status": "postponed",
+      "mandante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      },
+      "visitante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      }
+    },
+    {
+      "data": "2021-05-02",
+      "horario": "18:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      },
+      "visitante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      }
+    },
+    {
+      "data": "2021-05-03",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      },
+      "visitante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      }
+    },
+    {
+      "data": "2021-05-03",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      },
+      "visitante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      }
+    },
+    {
+      "data": "2021-05-07",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      },
+      "visitante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      }
+    },
+    {
+      "data": "2021-05-08",
+      "horario": "11:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      },
+      "visitante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      }
+    },
+    {
+      "data": "2021-05-08",
+      "horario": "14:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      },
+      "visitante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      }
+    },
+    {
+      "data": "2021-05-08",
+      "horario": "16:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      },
+      "visitante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      }
+    },
+    {
+      "data": "2021-05-08",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      },
+      "visitante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      }
+    },
+    {
+      "data": "2021-05-09",
+      "horario": "11:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      },
+      "visitante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      }
+    },
+    {
+      "data": "2021-05-09",
+      "horario": "13:05",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      },
+      "visitante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      }
+    },
+    {
+      "data": "2021-05-09",
+      "horario": "15:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      },
+      "visitante": {
+        "id": "everton",
+        "nome": "Everton"
+      }
+    },
+    {
+      "data": "2021-05-09",
+      "horario": "18:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      },
+      "visitante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      }
+    },
+    {
+      "data": "2021-05-10",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      },
+      "visitante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      }
+    },
+    {
+      "data": "2021-05-11",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      },
+      "visitante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      }
+    },
+    {
+      "data": "2021-05-11",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      },
+      "visitante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      }
+    },
+    {
+      "data": "2021-05-12",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      },
+      "visitante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      }
+    },
+    {
+      "data": "2021-04-03",
+      "horario": "16:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      },
+      "visitante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      }
+    },
+    {
+      "data": "2021-04-03",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      },
+      "visitante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      }
+    },
+    {
+      "data": "2021-04-04",
+      "horario": "11:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      },
+      "visitante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      }
+    },
+    {
+      "data": "2021-04-04",
+      "horario": "13:05",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      },
+      "visitante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      }
+    },
+    {
+      "data": "2021-04-04",
+      "horario": "15:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      },
+      "visitante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      }
+    },
+    {
+      "data": "2021-04-04",
+      "horario": "18:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      },
+      "visitante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      }
+    },
+    {
+      "data": "2021-04-05",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "everton",
+        "nome": "Everton"
+      },
+      "visitante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      }
+    },
+    {
+      "data": "2021-04-05",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      },
+      "visitante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      }
+    },
+    {
+      "data": "2021-04-09",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      },
+      "visitante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      }
+    },
+    {
+      "data": "2021-04-10",
+      "horario": "11:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      },
+      "visitante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      }
+    },
+    {
+      "data": "2021-04-10",
+      "horario": "14:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      },
+      "visitante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      }
+    },
+    {
+      "data": "2021-04-10",
+      "horario": "16:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      },
+      "visitante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      }
+    },
+    {
+      "data": "2021-04-11",
+      "horario": "11:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      },
+      "visitante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      }
+    },
+    {
+      "data": "2021-04-11",
+      "horario": "13:05",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      },
+      "visitante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      }
+    },
+    {
+      "data": "2021-04-11",
+      "horario": "15:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      },
+      "visitante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      }
+    },
+    {
+      "data": "2021-04-11",
+      "horario": "18:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      },
+      "visitante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      }
+    },
+    {
+      "data": "2021-04-12",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      },
+      "visitante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      }
+    },
+    {
+      "data": "2021-04-12",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      },
+      "visitante": {
+        "id": "everton",
+        "nome": "Everton"
+      }
+    },
+    {
+      "data": "2021-04-16",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "everton",
+        "nome": "Everton"
+      },
+      "visitante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      }
+    },
+    {
+      "data": "2021-04-17",
+      "horario": "11:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "newcastle-united",
+        "nome": "Newcastle United"
+      },
+      "visitante": {
+        "id": "west-ham-united",
+        "nome": "West Ham United"
+      }
+    },
+    {
+      "data": "2021-04-17",
+      "horario": "14:00",
+      "estadio": null,
+      "status": "postponed",
+      "mandante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      },
+      "visitante": {
+        "id": "crystal-palace",
+        "nome": "Crystal Palace"
+      }
+    },
+    {
+      "data": "2021-04-17",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "wolverhampton",
+        "nome": "Wolverhampton"
+      },
+      "visitante": {
+        "id": "sheffield-united",
+        "nome": "Sheffield United"
+      }
+    },
+    {
+      "data": "2021-04-18",
+      "horario": "12:30",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      },
+      "visitante": {
+        "id": "fulham",
+        "nome": "Fulham"
+      }
+    },
+    {
+      "data": "2021-04-18",
+      "horario": "15:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "manchester-united",
+        "nome": "Manchester United"
+      },
+      "visitante": {
+        "id": "burnley",
+        "nome": "Burnley"
+      }
+    },
+    {
+      "data": "2021-04-19",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leeds-united",
+        "nome": "Leeds United"
+      },
+      "visitante": {
+        "id": "liverpool",
+        "nome": "Liverpool"
+      }
+    },
+    {
+      "data": "2021-04-20",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "chelsea",
+        "nome": "Chelsea"
+      },
+      "visitante": {
+        "id": "brighton-and-hove-albion",
+        "nome": "Brighton & Hove Albion"
+      }
+    },
+    {
+      "data": "2021-04-21",
+      "horario": "17:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "tottenham-hotspur",
+        "nome": "Tottenham Hotspur"
+      },
+      "visitante": {
+        "id": "southampton",
+        "nome": "Southampton"
+      }
+    },
+    {
+      "data": "2021-04-21",
+      "horario": "19:15",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "aston-villa",
+        "nome": "Aston Villa"
+      },
+      "visitante": {
+        "id": "manchester-city",
+        "nome": "Manchester City"
+      }
+    },
+    {
+      "data": "2021-04-22",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "leicester-city",
+        "nome": "Leicester City"
+      },
+      "visitante": {
+        "id": "west-bromwich-albion",
+        "nome": "West Bromwich Albion"
+      }
+    },
+    {
+      "data": "2021-04-23",
+      "horario": "19:00",
+      "estadio": null,
+      "status": "finished",
+      "mandante": {
+        "id": "arsenal",
+        "nome": "Arsenal"
+      },
+      "visitante": {
+        "id": "everton",
+        "nome": "Everton"
+      }
+    }
+  ]
+}

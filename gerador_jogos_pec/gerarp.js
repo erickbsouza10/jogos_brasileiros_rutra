@@ -1,43 +1,46 @@
-import fetch from "node-fetch";
 import fs from "fs";
 import "dotenv/config";
 
-const LEAGUE_ID = 75; // Paulista
-const SEASON = 2026;
+const TOURNAMENT_ID = 17;
+const SEASON_ID = 29415;
 
-const url = `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${LEAGUE_ID}&season=${SEASON}`;
+const url = `https://sofascore.p.rapidapi.com/tournaments/get-next-matches?tournamentId=${TOURNAMENT_ID}&seasonId=${SEASON_ID}&pageIndex=0`;
 
 const res = await fetch(url, {
   headers: {
-    "X-RapidAPI-Key": process.env.API_FOOTBALL_KEY,
-    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+    "X-RapidAPI-Key": process.env.RAPIDAPI_KEY,
+    "X-RapidAPI-Host": "sofascore.p.rapidapi.com"
   }
 });
 
+if (!res.ok) {
+  console.error(await res.text());
+  throw new Error("Erro Sofascore: " + res.status);
+}
+
 const data = await res.json();
 
-const jogos = data.response.map(j => ({
-  data: j.fixture.date.slice(0, 10),
-  horario: j.fixture.date.slice(11, 16),
-  estadio: j.fixture.venue?.name || null,
-  rodada: j.league.round,
-  status: j.fixture.status.short,
+const jogos = data.events.map(j => ({
+  data: new Date(j.startTimestamp * 1000).toISOString().slice(0, 10),
+  horario: new Date(j.startTimestamp * 1000).toISOString().slice(11, 16),
+  estadio: j.venue?.name || null,
+  status: j.status?.type || null,
   mandante: {
-    id: j.teams.home.name.toLowerCase().replace(/\s+/g, "-"),
-    nome: j.teams.home.name
+    id: j.homeTeam.slug,
+    nome: j.homeTeam.name
   },
   visitante: {
-    id: j.teams.away.name.toLowerCase().replace(/\s+/g, "-"),
-    nome: j.teams.away.name
+    id: j.awayTeam.slug,
+    nome: j.awayTeam.name
   }
 }));
 
 fs.writeFileSync(
-  "paulista-2026.json",
+  "paulista-sofascore.json",
   JSON.stringify(
     {
-      campeonato: "Campeonato Paulista 2026",
-      estado: "SP",
+      campeonato: "Campeonato Paulista",
+      fonte: "Sofascore",
       jogos
     },
     null,
@@ -45,4 +48,4 @@ fs.writeFileSync(
   )
 );
 
-console.log("✔ paulista-2026.json gerado");
+console.log("✔ paulista-sofascore.json gerado");
