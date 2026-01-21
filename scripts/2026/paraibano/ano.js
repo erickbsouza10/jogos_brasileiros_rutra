@@ -127,8 +127,8 @@ export default {
     //   transmissao: "GE PB / Rede Paraíba"
     // },
     {
-      data: "2026-02-21",
-      horario: "A definir",
+      data: "2026-02-20",
+      horario: "21:00",
       estadio: "Amigão",
       mandante: { id: "treze", nome: "Treze" },
       visitante: { id: "campinense", nome: "Campinense" },
